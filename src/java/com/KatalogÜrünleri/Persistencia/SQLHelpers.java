@@ -13,6 +13,10 @@ public class SQLHelpers {
     }//fin método     
 //Insertar Usuario
 
+    public static String getUsuarioEmail(String correo) {
+        return "SELECT usuario, nombre,clave,perfil, estado, correo, foto FROM tblusuario where correo ='" + correo + "'";
+    }
+
     public static String insertarUsuario() {
         return "INSERT INTO tblusuario(usuario,nombre, clave,perfil, estado, correo, foto)values(?,?,?,?,?,?,?)";
     }
@@ -43,7 +47,7 @@ public class SQLHelpers {
         return "UPDATE tblcliente set nombres=?, apellidos=?, correo=?, telefono=?, direccion=?, estado=? where ideCliente=? ";
     }
 
-        public static String getProducto() {
+    public static String getProducto() {
         return "Select codpro, nombre,descripcion, existencias, valor, foto, estado FROM tblproductos";
     }
 

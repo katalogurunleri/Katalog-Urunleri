@@ -35,6 +35,9 @@
                         <tr> 
                             <td colspan="2"> <center> <button id="Ingresar" type="submit" name="action"  value="ingresar" class="btn1" > Ingresar </button> </center> </td>
                         </tr>
+                        <tr>
+                            <td colspan="2"><a href="javascript:popup('./FEnvioEmail.jsp',400,300)"><center>¿Olvidó su contraseña?</center></a></td>
+                        </tr>
                         <%if (mensajeError != null) {%>
                         <tr>
                             <td colspan="2"> <center> <p id="Mensa"> <%=mensajeError%> </p> </center> </td>

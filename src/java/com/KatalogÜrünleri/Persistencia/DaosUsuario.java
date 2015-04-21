@@ -94,8 +94,32 @@ public class DaosUsuario {
         }
         return u;
     }// fin getUsuario
-// Guardar un dato (Un usuario)
+    
+    public Usuario getUsuarioCorreo(Connection con, String correo) {
+        Usuario u = new Usuario();
+        try {
+            PreparedStatement p = con.prepareStatement(SQLHelpers.getUsuarioEmail(correo));
+            ResultSet r = p.executeQuery();
+            while (r.next()) {
+                u.setUsuario(r.getString(1));
+                u.setNombre(r.getString(2));
+                u.setClave(r.getString(3));
+                u.setPerfil(r.getString(4));
+                u.setEstado(r.getString(5));
+                u.setCorreo(r.getString(6));
+                u.setFoto(r.getString(7));
 
+            }// fin mientras
+        } catch (Exception e) {
+        } finally {
+            try {
+                con.close();
+            } catch (Exception cl) {
+            }
+        }
+        return u;
+    }// fin getUsuario
+    
     public boolean ValidarSiExiste(Connection con, String user) {
         boolean u = false;
         try {

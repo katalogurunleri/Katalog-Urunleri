@@ -1,8 +1,8 @@
 package com.KatalogÜrünleri.Negocio;
 
-import  com.KatalogÜrünleri.Entidades.Usuario;
-import  com.KatalogÜrünleri.Persistencia.DaosUsuario;
-import  com.KatalogÜrünleri.Utilidades.Conexion;
+import com.KatalogÜrünleri.Entidades.Usuario;
+import com.KatalogÜrünleri.Persistencia.DaosUsuario;
+import com.KatalogÜrünleri.Utilidades.Conexion;
 import java.sql.Connection;
 import java.util.List;
 
@@ -13,6 +13,13 @@ public class UsuarioN {
     public UsuarioN() {
         dao = new DaosUsuario();
     }// fin constructor
+
+    public Usuario getUsuarioEmail(String email) {
+        Connection c = new Conexion().getCon();
+        return dao.getUsuarioCorreo(c, email);
+        //una vez programado pasamos al servlet al buscar
+
+    }
 
     public List<Usuario> listadoUsuarios() {
         Connection c;
@@ -44,7 +51,7 @@ public class UsuarioN {
         String estado = user.getEstado();
         String correo = user.getCorreo();
         String foto = user.getFoto();
-        
+
         if ("".equals(correo) || null == correo) {
             mensajeError = "<br>Debe ingresar el  correo";
         }// fin si

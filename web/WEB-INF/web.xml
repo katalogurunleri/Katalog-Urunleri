@@ -16,6 +16,10 @@
         <servlet-name>ProductoServlet</servlet-name>
         <servlet-class>com.KatalogÜrünleri.Servlets.ProductoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CorreoServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.CorreoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Autenticacion</servlet-name>
         <url-pattern>/Autenticacion</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ProductoServlet</servlet-name>
         <url-pattern>/ProductoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CorreoServlet</servlet-name>
+        <url-pattern>/CorreoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
