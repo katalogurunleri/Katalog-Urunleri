@@ -1,7 +1,7 @@
 package com.KatalogÜrünleri.Entidades;
 
 public class Cliente {
-    
+    // soy melany ensyando github
     public Cliente(){}
     
     private String ideCliente, nombres, apellidos, correo, telefono, direccion, estado;
