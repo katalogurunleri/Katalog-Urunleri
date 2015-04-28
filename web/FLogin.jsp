@@ -10,6 +10,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="jq/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="jq/Querys.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -40,7 +42,7 @@
                         </tr>
                         <%if (mensajeError != null) {%>
                         <tr>
-                            <td colspan="2"> <center> <p id="Mensa"> <%=mensajeError%> </p> </center> </td>
+                            <!--<td colspan="2"> <center>--><div class="men"> <p id="Mensa"> <%=mensajeError%> </p> </div><!--</center> </td>-->
                         </tr>   
                         <%}%>
                     </table>
@@ -104,7 +106,25 @@
             #Mensa{
                 font-family: Arial;
                 font-size: 110%;
-                color: black;
+                //color: black;
+            }
+            
+            .men{
+                color:white;
+                position: absolute;
+                left:25%;
+                top: 130%;
+                z-index: 100;
+                border-radius: 10px;
+                border: 2px solid white;
+                box-shadow: 0px 0px 15px #000; /* Sombra */
+                float: none;
+                background-color: rgba(11, 11, 11, 0.7);
+                width: auto;
+                height: auto;
+                padding: 3%;
+                margin-top:30%;
+
             }
         </style>
     </body>
