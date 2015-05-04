@@ -33,8 +33,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset=utf-8 />
     </head>
-    <body >
-        ENTRO!
+    <body>
         <div id="centro">
             <center><h1 id="titu"> Usuario </h1></center><br>
             <hr aling=left noshade size:5 width:70px color="#00a383"> 

@@ -4,9 +4,12 @@
 <%
     String mensajeError = (String) request.getAttribute("mensajeError");
     String usuario = request.getParameter("usuario") == null ? "" : request.getParameter("usuario");
-
-
 %>
+    <script lang="javascript">
+        function abrirVentana() {
+            open("FEnvioEmail.jsp", "recordar", "toolbar=no, directories=yes, menubar=no, status=no, resizable=yes,scrollbars=no");
+        }
+    </script>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,7 +41,7 @@
                             <td colspan="2"> <center> <button id="Ingresar" type="submit" name="action"  value="ingresar" class="btn1" > Ingresar </button> </center> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><a href="javascript:popup('./FEnvioEmail.jsp',400,300)"><center>¿Olvidó su contraseña?</center></a></td>
+                            <td colspan="2"><a onclick="abrirVentana()" ><center>¿Olvidó su contraseña?</center></a></td>
                         </tr>
                         <%if (mensajeError != null) {%>
                         <tr>

@@ -6,6 +6,11 @@
 <!-- form -->
 <form id="fondoformulario" name ="xForm" method="POST" action="./CorreoServlet"/>
 <center><img src="imagenes/e.png"></center>
+<title>Recordar Contraseña</title>
+<script language="JavaScript">
+        window.moveTo(500);
+        window.resizeTo(700, 200);
+    </script>
 <table >
     <tr>
         <td>Email</td>
