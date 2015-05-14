@@ -75,7 +75,7 @@ public class Conexion {
          probar sentencias SQL
          */
         try {
-            ResultSet r = c.getCon().prepareStatement(SQLHelpers.getUsuario()).executeQuery();
+            ResultSet r = c.getCon().prepareStatement(SQLHelpers.getUsuarioEmail("brayan_sosa23151@elpoli.edu.co")).executeQuery();
             System.out.println("lista de los Usuarios");
 
             if (r.next()) {

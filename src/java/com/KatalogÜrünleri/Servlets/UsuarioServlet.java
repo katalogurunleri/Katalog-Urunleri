@@ -29,6 +29,7 @@ public class UsuarioServlet extends HttpServlet {
         entU.setPerfil("");
         entU.setClave("");
         entU.setCorreo("");
+        entU.setConclave("");
 
     }
 
@@ -44,7 +45,9 @@ public class UsuarioServlet extends HttpServlet {
         String user = request.getParameter("txtusuario");
         String nombre = request.getParameter("txtnombre");
         String clave = request.getParameter("txtclave");
+        String conclave = request.getParameter("txtconclave");
         String perfil = request.getParameter("cboperfil");
+
         String estado = request.getParameter("cboestado");
         String correo = request.getParameter("txtcorreo");
         String foto = request.getParameter("filefoto");
@@ -116,8 +119,12 @@ public class UsuarioServlet extends HttpServlet {
 
         if ("guardar".equals(request.getParameter("action"))) {
             try {
-                un.insertarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
-                request.setAttribute("listado", un.listadoUsuarios());
+                if (clave.equals(conclave)) {
+                    un.insertarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
+                    request.setAttribute("listado", un.listadoUsuarios());
+                } else {
+                    men = "Las contraseñas no coinsiden";
+                }
 
             } catch (Exception er) {
                 men = er.getMessage();

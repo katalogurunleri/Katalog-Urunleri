@@ -14,7 +14,7 @@ public class SQLHelpers {
 //Insertar Usuario
 
     public static String getUsuarioEmail(String correo) {
-        return "SELECT usuario, nombre,clave,perfil, estado, correo, foto FROM tblusuario where correo ='" + correo + "'";
+        return "SELECT usuario, nombre,clave,perfil, estado, correo, foto FROM tblusuario where correo ='"+correo+"'";
     }
 
     public static String insertarUsuario() {

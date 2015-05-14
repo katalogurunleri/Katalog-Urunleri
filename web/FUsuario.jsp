@@ -4,7 +4,8 @@
 <%
     String user = request.getParameter("txtusuario");
     String nombre = request.getParameter("txtnombre");
-    String clave = request.getParameter("txtpclave");
+    String clave = request.getParameter("txtclave");
+    String conclave = request.getParameter("txtconclave");
     String perfil = request.getParameter("cboperfil");
     String estado = request.getParameter("cboestado");
     String correo = request.getParameter("txtcorreo");
@@ -19,6 +20,7 @@
         user = datou.getUsuario();
         nombre = datou.getNombre();
         clave = datou.getClave();
+        conclave = clave;
         perfil = datou.getPerfil();
         estado = datou.getEstado();
         correo = datou.getCorreo();
@@ -44,15 +46,19 @@
                         <table>
                             <tr>
                                 <td id="tex">Usuario*</td>
-                                <td><input type="text" name="txtusuario" value="<%= user != null ? user : ""%>" size="20" maxlength="5" </td>
+                                <td><input type="text" name="txtusuario" value="<%= user != null ? user : ""%>" size="30" maxlength="5" </td>
                             </tr>
                             <tr>
                                 <td id="tex">Nombre*</td>
-                                <td><input type="text" name="txtnombre" value="<%= nombre != null ? nombre : ""%>" size="20" maxlength="30"></td>
+                                <td><input type="text" name="txtnombre" value="<%= nombre != null ? nombre : ""%>" size="30" maxlength="30"></td>
                             </tr>
                             <tr>
-                                <td id="tex">Clave*</td>
-                                <td><input type="password" name="txtclave" value="<%= clave != null ? clave : ""%>" size="20" maxlength="5"></td>
+                                <td id="tex">Contraseña*</td>
+                                <td><input type="password" name="txtclave" value="<%= clave != null ? clave : ""%>" size="30" maxlength="5"></td>
+                            </tr>
+                            <tr>
+                                <td id="tex">Confirma la contraseña*</td>
+                                <td><input type="password" name="txtconclave" value="<%= conclave != null ? conclave : ""%>" size="30" maxlength="5"></td>
                             </tr>
                             <tr>
                                 <td id="tex">Perfil* </td>
@@ -76,7 +82,7 @@
                             </tr>
                             <tr> 
                                 <td id="tex">Correo *</td>
-                                <td><input type="text" name="txtcorreo" value="<%= correo != null ? correo : ""%>" size="20" maxlength="30"> </td>
+                                <td><input type="text" name="txtcorreo" value="<%= correo != null ? correo : ""%>" size="30" maxlength="30"> </td>
                             </tr>
                             <tr>
                                 <%
@@ -157,7 +163,7 @@
             height: 4%;
             margin-left: 1%;
             margin-bottom: 2%;
-            /*margin-top: 15%;*/
+            margin-top: 3%;
             position:relative;      
             -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;

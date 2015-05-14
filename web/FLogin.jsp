@@ -5,11 +5,11 @@
     String mensajeError = (String) request.getAttribute("mensajeError");
     String usuario = request.getParameter("usuario") == null ? "" : request.getParameter("usuario");
 %>
-    <script lang="javascript">
-        function abrirVentana() {
-            open("FEnvioEmail.jsp", "recordar", "toolbar=no, directories=yes, menubar=no, status=no, resizable=yes,scrollbars=no");
-        }
-    </script>
+<script lang="javascript">
+    function abrirVentana() {
+        open("FEnvioEmail.jsp", "recordar", "toolbar=no, directories=yes, menubar=no, status=no, resizable=yes,scrollbars=no");
+    }
+</script>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,14 +41,12 @@
                             <td colspan="2"> <center> <button id="Ingresar" type="submit" name="action"  value="ingresar" class="btn1" > Ingresar </button> </center> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><a onclick="abrirVentana()" ><center>¿Olvidó su contraseña?</center></a></td>
+                            <td colspan="2" id="text"><a onclick="abrirVentana()" ><center> <u>¿Olvidó su contraseña?</u></center></a></td>
                         </tr>
-                        <%if (mensajeError != null) {%>
-                        <tr>
-                            <!--<td colspan="2"> <center>--><div class="men"> <p id="Mensa"> <%=mensajeError%> </p> </div><!--</center> </td>-->
-                        </tr>   
-                        <%}%>
                     </table>
+                    <%if (mensajeError != null) {%>
+                    <div class="men"> <p id="Mensa"> <%=mensajeError%> </p> </div>
+                    <%}%>
                 </form>
             </center>
         </div>
@@ -67,7 +65,6 @@
             #fondo{
                 background: white;
                 opacity: 0.5;
-                position: absolute;
                 width: 35%;
                 height: 22%;
                 margin-left: 30%;
@@ -108,15 +105,14 @@
             }
             #Mensa{
                 font-family: Arial;
-                font-size: 110%;
-                //color: black;
+                font-size: 100%;
             }
-            
+
             .men{
                 color:white;
                 position: absolute;
                 left:25%;
-                top: 130%;
+                top: 270%;
                 z-index: 100;
                 border-radius: 10px;
                 border: 2px solid white;
@@ -125,7 +121,7 @@
                 background-color: rgba(11, 11, 11, 0.7);
                 width: auto;
                 height: auto;
-                padding: 3%;
+                padding: 1%;
                 margin-top:30%;
 
             }

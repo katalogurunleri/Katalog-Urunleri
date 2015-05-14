@@ -47,13 +47,13 @@ public class CorreoServlet extends HttpServlet {
         String men = "";
         request.setAttribute("mensaje", null);
 
-        String from = "soportekatalogurunleri@gmail.com";
+        String from = "katalogurunleri@gmail.com";
         String to = mail;
         String subject = "Recordatorio Clave";
         String message = "";
 
-        String login = "soportekatalogurunleri@gmail.com";
-        String password = "AdminKat123";
+        String login = "katalogurunleri@gmail.com";
+        String password = "98100658305";
 
         if ("Listar".equals(request.getParameter("action"))) {
             try {
@@ -65,74 +65,67 @@ public class CorreoServlet extends HttpServlet {
         }
 
         if ("envio".equals(request.getParameter("action"))) {
-
             try {
-                if (mail != null) {
-                    entU = un.getUsuarioEmail(mail);
-                    if (!entU.getUsuario().equals("0")) {
-                        message = "\n Usuario: " + entU.getUsuario(); //SE ESTÁ LLAMANDO LO QUE VA A LLEGAR AL CORREO ELECTRÓNICO
-                        message += "\n Contraseña: " + entU.getClave() + "\n RECUERDE CAMBIARLA";
-                        men = message;
-                        // cuerpo del mensaje
-                        men = "Los datos han sido enviados  su correo";
-                    } else {
-                        men = "Error El Correo \n no está registrado";
-                        message = "";
+                if (mail == "") {
+                    men = "Ingrese un correo";
+                } else {
+                    men = "Error el correo no está registrado";
+                    message = "";
+                }
+                entU = un.getUsuarioEmail(mail);
+                if (!entU.getUsuario().equals("0")) {
+                    message = "\n Usuario: " + entU.getUsuario(); //SE ESTÁ LLAMANDO LO QUE VA A LLEGAR AL CORREO ELECTRÓNICO
+                    message += "\n Contraseña: " + entU.getClave();
+                    message += "\n Esta es su contraseña recuerde cambiarla";
+                    men = message;
+                    men = "Los datos han sido enviados a su correo: " + mail;
+                } 
+
+
+                /*Enviar mail por correo por gmail*/
+                try {
+                    if (!message.equals("")) {
+                        Properties props = new Properties();
+                        props.setProperty("mail.host", "smtp.gmail.com");//servidor de salidas de gmail
+                        props.setProperty("mail.smtp.port", "587");//puerto de salida
+                        props.setProperty("mail.smtp.auth", "true");//autorización
+                        props.setProperty("mail.smtp.starttls.enable", "true");//párametros-++0
+
+                        Authenticator auth = new SMTPAuthenticator(login, password);
+
+                        Session session = Session.getInstance(props, auth);
+
+                        MimeMessage msg = new MimeMessage(session);
+                        msg.setText(message);
+                        msg.setSubject(subject);
+                        msg.setFrom(new InternetAddress(from));
+                        msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                        Transport.send(msg);
                     }
-
-
-                    /*Enviar mail por correo por gmail*/
-                    try {
-                        if (!message.equals("")) {
-                            Properties props = new Properties();
-                            props.setProperty("mail.host", "smtp.gmail.com");//servidor de salidas de gmail
-                            props.setProperty("mail.smtp.port", "587");//puerto de salida
-                            props.setProperty("mail.smtp.auth", "true");//autorización
-                            props.setProperty("mail.smtp.starttls.enable", "true");//párametros-++0
-
-                            Authenticator auth = new SMTPAuthenticator(login, password);
-
-                            Session session = Session.getInstance(props, auth);
-
-                            MimeMessage msg = new MimeMessage(session);
-                            msg.setText(message);
-                            msg.setSubject(subject);
-                            msg.setFrom(new InternetAddress(from));
-                            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-                            Transport.send(msg);
-                        }
-                    } catch (AuthenticationFailedException ex) {
-                        men += "<br>Error de autenticacion" + ex.getCause();
-                    } catch (AddressException ex) {
-                        men += "<br>Error Email del Usuario";
-                    } catch (MessagingException ex) {
-                        men += "<br>Error al envío de datos de Usuario ";
-
-                    }
-                }else{
-                    men="Ingrese el correo";
+                } catch (AuthenticationFailedException ex) {
+                    men += "<br>Error de autenticacion " + ex.getCause();
+                } catch (AddressException ex) {
+                    men += "<br>Error Email del Usuario";
+                } catch (MessagingException ex) {
+                    men += "<br>Error al envío de datos de Usuario ";
                 }
 
             } catch (Exception ex1) {
                 Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex1);
-                men = "" + ex1.getMessage();
             }
             request.setAttribute("mensaje", men);
         }
-
         if ("nuevo".equals(request.getParameter("action"))) {
 
             try {
             } catch (Exception ex) {
                 Logger.getLogger(CorreoServlet.class.getName()).log(Level.SEVERE, null, ex);
-                men = "" + ex.getMessage();
+                men = "0000" + ex.getMessage();
             }
         }
 
-        request.setAttribute(
-                "mensaje", men + "" + mail);
-        request.getRequestDispatcher(
-                "FEnvioEmail.jsp").forward(request, response);
+        request.setAttribute("mensaje", men);
+        request.getRequestDispatcher("FEnvioEmail.jsp").forward(request, response);
     }
 
     private class SMTPAuthenticator extends Authenticator {

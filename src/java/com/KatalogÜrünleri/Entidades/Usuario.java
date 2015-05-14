@@ -5,6 +5,7 @@ public class Usuario {
     String usuario;
     String nombre;
     String clave;
+    String conclave;
     String perfil;
     String estado;
     String correo;
@@ -78,6 +79,14 @@ public class Usuario {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public String getConclave() {
+        return conclave;
+    }
+
+    public void setConclave(String conclave) {
+        this.conclave = conclave;
     }
     
 }//Fin Clase Usuario

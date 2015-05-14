@@ -39,6 +39,12 @@ public class UsuarioN {
         return dao.getUsuario(c, us);
     }// fin getUsuario()
 
+    public Usuario getExisteCorreo(String us) {
+        Connection c;
+        c = new Conexion().getCon();
+        return dao.getUsuario(c, us);
+    }// fin getUsuario()
+
     public void insertarUsuario(Usuario user) throws Exception {
 // Cargamos los datos en el servlet
         //con el constructor new(usuario, nombre,....estado)
@@ -62,7 +68,7 @@ public class UsuarioN {
             mensajeError = "<br>Debe ingresar el  perfil";
         }// fin si
         if ("".equals(clave) || null == clave) {
-            mensajeError = "<br>Debe ingresar la  clave";
+            mensajeError = "<br>Debe ingresar la  contraseña";
         }// fin si
         if ("".equals(nombre) || null == nombre) {
             mensajeError = "<br>Debe ingresar el nombre";

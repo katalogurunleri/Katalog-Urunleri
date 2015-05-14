@@ -140,6 +140,27 @@ public class DaosUsuario {
         return u;
     }// fin ValidarSiExiste
 
+    
+    public boolean ValidarSiExisteCorreo(Connection con, String user) {
+        boolean u = false;
+        try {
+
+            /*usuario, nombre,clave,perfil, estado */
+            PreparedStatement p = con.prepareStatement(SQLHelpers.getUsuarioEmail(user));
+            ResultSet r = p.executeQuery();
+            while (r.next()) {
+                u = true;
+            }// fin mientras
+        } catch (Exception e) {
+        } finally {
+            try {
+                con.close();
+            } catch (Exception cl) {
+            }
+        }
+        return u;
+    }// fin ValidarSiExiste
+    
     public String getInsertaUsuario(
             Connection con,
             String user,

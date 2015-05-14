@@ -19,7 +19,7 @@
     <body>    
         <% if ("Activo".equals(estado)) {%>  
         <% if ("Administrador".equals(perfil)) {%>      
-        <table style="width: 100%;">
+        <table style="width: 100%; border: 0px;" >
             <tr>
             </tr>
             <tr>
