@@ -20,6 +20,10 @@
         <servlet-name>CorreoServlet</servlet-name>
         <servlet-class>com.KatalogÜrünleri.Servlets.CorreoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CatalogoPrinServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.CatalogoPrinServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Autenticacion</servlet-name>
         <url-pattern>/Autenticacion</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>CorreoServlet</servlet-name>
         <url-pattern>/CorreoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogoPrinServlet</servlet-name>
+        <url-pattern>/CatalogoPrinServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

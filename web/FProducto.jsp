@@ -9,6 +9,7 @@
     String val = request.getParameter("txtvalor");
     String fot = request.getParameter("filefoto");
     String est = request.getParameter("cboestado");
+    String cat = request.getParameter("cbocatprin");
 
     String men = (String) request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : "";
 
@@ -23,6 +24,7 @@
         val = datop.getValor();
         fot = datop.getFoto();
         est = datop.getEstado();
+        cat = datop.getCatprin();
     }// fin si
 
 %>
@@ -34,11 +36,11 @@
     <body>
 
         <div id="centro">
-            <center><h1 id="titu"> Cliente </h1></center>
+            <center><h1 id="titu"> Producto </h1></center>
             <BR>
             <hr aling=left noshade size:5 width:70px color="#00a383"> 
             <form name="Xfrom" action="./ProductoServlet" method="POST">
-                <div id="datoc">
+                <div id="datop">
                     <fieldset id="borde">
                         <legend id="tibo">DATOS DEL PRODUCTO</legend>
                         <table>
@@ -53,11 +55,11 @@
                             <tr>
                                 <td id="tex">Descripción*</td>
                                 <td> 
-                                    <textarea type="text" name="txtdescrip" value="<%=des != null ? des : ""%>" size="20" maxlength="300"><%=des != null ? des : ""%></textarea>
+                                    <textarea type="text" rows="3" cols="30" name="txtdescrip" value="<%=des != null ? des : ""%>"   maxlength="300"><%=des != null ? des : ""%></textarea>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="tex">Existencia*</td>
+                                <td id="tex">Existencias*</td>
                                 <td><input type="text" name="txtexis" value="<%=exi != null ? exi : ""%>" size="20" maxlength="50"> </td>
                             </tr>
                             <tr>
@@ -88,12 +90,22 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr>
+                                <td id="tex">Catálogo principal*</td>
+                                <td>
+                                    <select name="cbocatprin">
+                                        <option value="" >...Seleccione...</option>
+                                        <option value="Si"<%if ("Si".equals(cat)) {%>selected<%}%> >Si</option>
+                                        <option value="No"<%if ("No".equals(cat)) {%>selected<%}%> >No</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </table> 
                         <br>
                         <h4 id="cam">Campos con asterisco (*) son obligatorios</h4>
                     </fieldset>
                 </div>
-                <center> <jsp:include page="FBotones.jsp" flush="true"/></center>
+                <center> <br><br> <jsp:include page="FBotones.jsp" flush="true"/></center>
             </form>
         </div>
         <div id="tblu">
@@ -142,7 +154,7 @@
             font-size: 23px;
 
         }
-        #datou{
+        #datop{
             margin-left: 2%;
             margin-top: 2%;
             width: 35%;
@@ -152,7 +164,7 @@
             height: 4%;
             margin-left: 1%;
             margin-bottom: 2%;
-            /*margin-top: 15%;*/
+            margin-top: 3%;
             position:relative;      
             -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
@@ -187,10 +199,10 @@
             color: #00a383;
         }
         #tblu{ 
-            margin-left: 35%;
-            width:750px;
+            margin-left: 38%;
+            width:725px;
             height: 300px;
-            margin-top: -29%;
+            margin-top: -45%;
             position:absolute;
             overflow-x: hidden;
 

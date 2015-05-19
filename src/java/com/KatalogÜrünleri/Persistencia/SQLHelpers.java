@@ -48,18 +48,18 @@ public class SQLHelpers {
     }
 
     public static String getProducto() {
-        return "Select codpro, nombre,descripcion, existencias, valor, foto, estado FROM tblproductos";
+        return "Select codpro, nombre,descripcion, existencias, valor, foto, estado, catprin FROM tblproductos";
     }
 
     public static String getProducto(String cos) {
-        return "Select codpro, nombre,descripcion, existencias, valor, foto, estado  FROM tblproductos where codpro='" + cos + "'";
+        return "Select codpro, nombre,descripcion, existencias, valor, foto, estado, catprin  FROM tblproductos where codpro='" + cos + "'";
     }
 
     public static String insertarProducto() {
-        return "INSERT INTO tblproductos (codpro, nombre,descripcion, existencias, valor, foto, estado )VALUES (?,?,?,?,?,?,?)";
+        return "INSERT INTO tblproductos (codpro, nombre,descripcion, existencias, valor, foto, estado, catprin )VALUES (?,?,?,?,?,?,?,?)";
     }
 
     public static String actualizarProducto() {
-        return "UPDATE tblproductos set nombre=?,descripcion=?, existencias=?, valor=?, foto=?, estado=? where codpro=? ";
+        return "UPDATE tblproductos set nombre=?,descripcion=?, existencias=?, valor=?, foto=?, estado=?, catprin=? where codpro=? ";
     }
 }

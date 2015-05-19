@@ -198,10 +198,10 @@
             color: #00a383;
         }
         #tblu{ 
-            width:750px;
-            height: 300px;
+            width:740px;
+            height: 420px;
             margin-left: 38%;
-            margin-top: -40%;
+            margin-top: -45%;
             position:absolute;
             overflow-x: hidden;
 

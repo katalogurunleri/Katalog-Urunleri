@@ -81,7 +81,7 @@
                         <h4 id="cam">Campos con asterisco (*) son obligatorios</h4>
                     </fieldset>
                 </div>
-                <center> <jsp:include page="FBotones.jsp" flush="true"/></center>
+                <center> <br><br>  <jsp:include page="FBotones.jsp" flush="true"/></center>
             </form>
         </div>
         <div id="tblu">
@@ -115,7 +115,7 @@
         </div>
     </body>
     <style type="text/css">
-       body{
+        body{
             background: white;
         }
         #borde{
@@ -127,17 +127,18 @@
             font-size: 23px;
 
         }
-        #datou{
+        #datoc{
             margin-left: 2%;
             margin-top: 2%;
             width: 35%;
+
         }
         #centro{
             width: 98%;
             height: 4%;
             margin-left: 1%;
             margin-bottom: 2%;
-            /*margin-top: 15%;*/
+            margin-top: 3%;
             position:relative;      
             -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
@@ -172,16 +173,12 @@
             color: #00a383;
         }
         #tblu{ 
-            background: RED;
-            width:750px;
+            margin-left: 40%;
+            width:700px;
             height: 300px;
-            margin-top: -29%;
+            margin-top: -32%;
             position:absolute;
             overflow-x: hidden;
-
-            /*-webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-            -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-            box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;*/
         }
         .tabla {
             margin:0px;padding:0px;

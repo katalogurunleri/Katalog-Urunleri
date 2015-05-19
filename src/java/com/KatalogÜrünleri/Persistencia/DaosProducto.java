@@ -23,6 +23,7 @@ public class DaosProducto {
                 pr.setValor(registros.getString(5));
                 pr.setFoto(registros.getString(6));
                 pr.setEstado(registros.getString(7));
+                pr.setCatprin(registros.getString(8));
                 resultado.add(pr);
             }// fin mientras
 
@@ -51,6 +52,7 @@ public class DaosProducto {
                 pr.setValor(registros.getString(5));
                 pr.setFoto(registros.getString(6));
                 pr.setEstado(registros.getString(7));
+                pr.setCatprin(registros.getString(8));
                 resultado.add(pr);
             }// fin mientras
 
@@ -77,6 +79,7 @@ public class DaosProducto {
                 pr.setValor(r.getString(5));
                 pr.setFoto(r.getString(6));
                 pr.setEstado(r.getString(7));
+                pr.setCatprin(r.getString(8));
             }// fin mientras
         } catch (Exception e) {
         } finally {
@@ -115,7 +118,9 @@ public class DaosProducto {
             String exis,
             String valor,
             String foto, 
-            String estado) {
+            String estado,
+            String catprin
+            ) {
         String res = "";
         try {
 
@@ -128,6 +133,7 @@ public class DaosProducto {
             p.setString(5, valor);
             p.setString(6, foto);
             p.setString(7, estado);
+            p.setString(8, catprin);
             p.execute();// Para acciones de actualizacion
 // e inserción de datos, eliminación y otros
 // es distinto a<>ó !=  executeQuery()-- solo consulta de datos
@@ -157,17 +163,19 @@ public class DaosProducto {
             String exis,
             String valor,
             String foto, 
-            String estado) {
+            String estado,
+            String catprin) {
         String res = "";
         try {
             PreparedStatement p = con.prepareStatement(SQLHelpers.actualizarProducto());
-           p.setString(7, cod);
+           p.setString(8, cod);
             p.setString(1, nombre);
             p.setString(2, desp);
             p.setString(3, exis);
             p.setString(4, valor);
             p.setString(5, foto);
             p.setString(6, estado);
+            p.setString(7, catprin);
             p.execute();// Para acciones de actualizacion
 // e inserción de datos, eliminación y otros
 // es distinto a<>ó !=  executeQuery()-- solo consulta de datos

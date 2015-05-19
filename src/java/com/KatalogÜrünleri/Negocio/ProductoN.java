@@ -44,6 +44,7 @@ public class ProductoN {
         String valor = datop.getValor();
         String foto = datop.getFoto();
         String est = datop.getEstado();
+        String cat = datop.getCatprin();
 
         if ("".equals(cod) || null == cod) {
             mensajeError += "<br>Debe ingresar el código del producto";
@@ -67,7 +68,9 @@ public class ProductoN {
         if ("".equals(est) || null == est) {
             mensajeError += "<br>Debe ingresar el estado del producto";
         }// fin si
-
+        if ("".equals(cat) || null == cat) {
+            mensajeError += "<br>Debe seleccionar si desea que el producto aparesca en el catálogo inicial";
+        }// fin si
 // Para validar que si se hayan ingresado todos los
 // campos obligatorios
         if (!"".equals(mensajeError)) {
@@ -79,7 +82,7 @@ public class ProductoN {
             throw new Exception(mensajeError);
         }
 
-        mensajeError = dao.getInsertaProducto(con.getCon(), cod, nombre, desp, exis, valor, foto, est);
+        mensajeError = dao.getInsertaProducto(con.getCon(), cod, nombre, desp, exis, valor, foto, est, cat);
         /*Para capturar errores al guardar el dato(Usuario)  */
         if (!"".equals(mensajeError)) {
             throw new Exception(mensajeError);
@@ -101,6 +104,7 @@ public class ProductoN {
         String valor = datop.getValor();
         String foto = datop.getFoto();
         String est = datop.getEstado();
+        String cat = datop.getCatprin();
 
         if ("".equals(cod) || null == cod) {
             mensajeError += "<br>Debe ingresar el código del producto";
@@ -124,6 +128,9 @@ public class ProductoN {
         if ("".equals(est) || null == est) {
             mensajeError += "<br>Debe ingresar el estado del producto";
         }// fin si
+        if ("".equals(cat) || null == cat) {
+            mensajeError += "<br>Debe seleccionar si desea que el producto aparesca en el catálogo inicial";
+        }// fin si
 
 // Para validar que si se hayan ingresado todos los
 // campos obligatorios
@@ -131,7 +138,7 @@ public class ProductoN {
             throw new Exception(mensajeError);
         }// fin si
 
-        mensajeError = dao.getActualizarProdcuto(con.getCon(), cod, nombre, desp, exis, valor, foto, est);
+        mensajeError = dao.getActualizarProdcuto(con.getCon(), cod, nombre, desp, exis, valor, foto, est, cat);
         /*Para capturar errores al guardar el dato(Usuario)  */
         if (!"".equals(mensajeError)) {
             throw new Exception(mensajeError);

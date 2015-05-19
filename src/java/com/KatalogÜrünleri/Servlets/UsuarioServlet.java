@@ -120,8 +120,52 @@ public class UsuarioServlet extends HttpServlet {
         if ("guardar".equals(request.getParameter("action"))) {
             try {
                 if (clave.equals(conclave)) {
-                    un.insertarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
-                    request.setAttribute("listado", un.listadoUsuarios());
+
+                    String resp = "NO SIRVE";
+                    char Caracter;
+                    int ASCII, mayusc, longi, num, minusc;
+                    mayusc = 0;
+                    minusc = 0;
+                    longi = 0;
+                    num = 0;
+                    for (int i = 0; i < clave.length(); i++) {
+                        Caracter = clave.charAt(i);
+                        ASCII = Caracter;
+                        if (ASCII >= 65 && ASCII <= 90) {
+                            mayusc = mayusc + 1;
+                        }
+                        if (ASCII >= 48 && ASCII <= 59) {
+                            num = num + 1;
+                        }
+                        if (ASCII >= 97 && ASCII <= 112) {
+                            minusc = minusc + 1;
+                        }
+                    }
+                    if (clave.length() >= 8 && clave.length() <= 16) {
+                        longi = 1;
+                    }
+                    if (mayusc != 0 && longi != 0 && num >= 3 && minusc >= 3) {
+                        resp = "SIRVE";
+                        un.insertarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
+                        request.setAttribute("listado", un.listadoUsuarios());
+                    }
+                    if (resp.equals("NO SIRVE")) {
+                        men += "<br>Su contraseña no cumple lo siguiente: ";
+                        if (mayusc == 0) {
+                            men += "<br>• Agrege 1 o mas de 1 letra mayuscula para su contraseña";
+                        }
+                        if (minusc < 3) {
+                            men += "<br>•Agrege 3 o mas de 3 letras minusculas para su contraseña";
+                        }
+                        if (minusc < 3) {
+                            men += "<br>•Agrege 3 o mas de 3 numeros para su contraseña";
+                        }
+                        if (longi == 0) {
+                            men += "<br>•Use mas de 8 caracteres y menos de 16 para su contraseña ";
+                        }
+                        men += "<br><br>Por seguridad mejore lo anterior dicho ";
+                    }
+
                 } else {
                     men = "Las contraseñas no coinsiden";
                 }

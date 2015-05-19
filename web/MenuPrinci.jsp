@@ -25,13 +25,13 @@
         <div class="menu" id="menu" >
             <ul id="boton">
                 <a href="Inicio.jsp" id="letra" target="Pprincipal">  <li> <center> Inicio </center>  </li> </a>
-                <a href="CatalogoPrin.jsp" id="letra" target="Pprincipal"> <li>  <center> Catálogo </center>  </li> </a>
+                <a href="./CatalogoPrinServlet?action=listar" id="letra" target="Pprincipal"> <li>  <center> Catálogo </center>  </li> </a>
                 <a href="#" id="letra" target="Pprincipal">  <li>  <center> Contáctanos</center> </li> </a>  
             </ul>
         </div>
 
-        <a id="in"> 
-            <center>  <p id="c" onclick="abrirVentana()"> INGRESAR </p>  </center> 
+        <a id="in" href=""> 
+            <center>  <p id="c"  onclick="abrirVentana()"> INGRESAR </p>  </center> 
         </a>
     </body>
     <style type="text/css">

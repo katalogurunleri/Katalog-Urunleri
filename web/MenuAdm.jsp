@@ -41,10 +41,10 @@
                     }
                     if (foto.equals("")) {
                 %>
-               <center> <img src="ImagePerfil/perfil.jpg" width="80" height="80" /> </center>
-                <% } else {%>
+                <center> <img src="ImagePerfil/perfil.jpg" width="80" height="80" /> </center>
+                    <% } else {%>
                 <center> <img  src="<%="ImagePerfil/" + foto%>" width="80" height="80"  /> </center>
-                <%}%>
+                    <%}%>
             </div>
             <div id="usuaMe">
                 <p>
@@ -52,6 +52,18 @@
                     <%=perfil%>
                 </p>
             </div>
+
+        </div>
+        <div id="con">
+            <ul class="nav">
+                <li id="li">
+                    <img id="ima" src="Imagenes/ajustes.png" width="20"  height="20"/>
+                    <ul id="ul2">
+                        <li><a id="a"><center>Perfil</center></a></li>
+                        <li ><a id="a"><center>Cerrar sesion</center></a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </body>
     <style type="text/css">
@@ -71,7 +83,6 @@
         }
         #menuMe{
             margin-left: 20%; 
-
         }
         #menuMe a li  {
             display: inline;
@@ -98,7 +109,6 @@
             transition: 0.4s;
             box-shadow: inset 0 0 0 1px white;
             font-size: 16px;
-
         }
         #in{
             text-decoration: none;
@@ -110,7 +120,6 @@
             border-radius: 10px;
             color: white;
         }
-       
         #in:hover{
             background: white;
             color: #00A383;
@@ -126,6 +135,60 @@
             margin-top: -1.5%;
             margin-left: 87%;
             position: absolute;
+        }
+        #con{
+            margin-left: 95%;
+            width:100px;
+            position: absolute;
+            z-index: 105;
+        }
+        #ima{
+            padding: 2px 2px;
+            background: white;
+            border-radius: 10px;
+
+        }
+        #ima:hover{
+            background: rgba(0,0,0,0);
+            transition: 0.4s;
+            box-shadow: inset 0 0 0 1px white;
+        }
+        #li{
+            margin-left: -65%;
+            list-style: none;
+            color: black;
+            font-family: Arial;
+            text-decoration: none;
+
+        }
+        #a{
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        #a:hover{
+            background: #00A383;
+            transition: 0.4s;
+            box-shadow: inset 0 0 0 1px white;
+        }
+        .nav > #li{
+            float: left;
+        }
+        .nav #li #ul2 li{
+            list-style: none;
+            padding-bottom: 2px;
+        }
+        .nav #li #ul2{
+            display:none;
+            position:absolute;
+            min-width:160px;
+            margin-left: -180px;
+            text-decoration: none;
+        }
+        .nav #li:hover> #ul2{
+            display:block;
         }
     </style>
 </html>

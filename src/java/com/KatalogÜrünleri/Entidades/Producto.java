@@ -2,12 +2,12 @@ package com.KatalogÜrünleri.Entidades;
 
 public class Producto {
 
-    String codpro, nombre, descripcion, existencias, valor, foto, estado;
+    String codpro, nombre, descripcion, existencias, valor, foto, estado, catprin;
 
     public Producto() {
     }
 
-    public Producto(String codpro, String nombre, String descripcion, String existencias, String valor, String foto, String estado) {
+    public Producto(String codpro, String nombre, String descripcion, String existencias, String valor, String foto, String estado, String catprin) {
         this.codpro = codpro;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -15,6 +15,7 @@ public class Producto {
         this.valor = valor;
         this.foto = foto;
         this.estado = estado;
+        this.catprin = catprin;
     }
 
     public String getCodpro() {
@@ -72,6 +73,15 @@ public class Producto {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getCatprin() {
+        return catprin;
+    }
+
+    public void setCatprin(String catprin) {
+        this.catprin = catprin;
+    }
+    
     
 
 }

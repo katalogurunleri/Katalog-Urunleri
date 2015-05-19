@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Familia
  */
-public class ProductoServlet extends HttpServlet {
+public class CatalogoPrinServlet extends HttpServlet {
 
     Producto entP = new Producto();
 
@@ -29,15 +29,13 @@ public class ProductoServlet extends HttpServlet {
         entP.setExistencias("");
         entP.setValor("");
         entP.setExistencias("");
-        entP.setCatprin("...Seleccione...");
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String modulo = "FProducto.jsp";// enviar respuesta
-        String pagina = "./FPrincipal.jsp";
+        String modulo = "CatalogoPrin.jsp";// enviar respuesta
         request.setAttribute("targetModulo", modulo);
         // Traer par�metros de la petici�n
         // Hecha desde FUsuario.jsp
@@ -48,7 +46,6 @@ public class ProductoServlet extends HttpServlet {
         String val = request.getParameter("txtvalor");
         String fot = request.getParameter("filefoto");
         String est = request.getParameter("cboestado");
-        String cat = request.getParameter("cbocatprin");
 
         String men = "";// para los mensajes
         ProductoN pn = new ProductoN();// Creamos un Objeto
@@ -87,14 +84,6 @@ public class ProductoServlet extends HttpServlet {
 
         }// fin si boton value es igual a buscar
 
-        if ("nuevo".equals(request.getParameter("action"))) {
-            try {
-                limpiar();
-                request.setAttribute("datoproducto", entP);
-            } catch (Exception er) {
-                men = "" + er.getMessage();
-            }
-        }// fin Nuevo
 
         if ("listar".equals(request.getParameter("action"))) {
             try {
@@ -108,40 +97,13 @@ public class ProductoServlet extends HttpServlet {
             }
         }// fin listar
 
-        if ("guardar".equals(request.getParameter("action"))) {
-            try {
-                pn.insertarProducto(new Producto(cod, nom, des, exi, val, fot, est, cat));
-                request.setAttribute("listado", pn.listadoProductos());
-            } catch (Exception er) {
-                men = er.getMessage();
-            }
-        }// fin guardar
-
-        if ("editar".equals(request.getParameter("action"))) {
-            try {
-                pn.actualizarProducto(new Producto(cod, nom, des, exi, val, fot, est, cat));
-                request.setAttribute("listado", pn.listadoProductos());
-                /*
-                 * Para Limpiar Textos
-                 */
-                limpiar();
-                request.setAttribute("datoproducto", entP);
-                /*
-                 * FIN LIMPIAR TEXTOS
-                 */
-
-            } catch (Exception er) {
-                men = "" + er.getMessage();
-            }
-        }// fin Editar
-
         if ("salir".equals(request.getParameter("action"))) {
             request.getSession().invalidate();
             request.getRequestDispatcher("./index.jsp").forward(request, response);
         }
 
         request.setAttribute("mensaje", men);
-        request.getRequestDispatcher(pagina).forward(request, response);
+        request.getRequestDispatcher(modulo).forward(request, response);
     } // fin processrequest 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
