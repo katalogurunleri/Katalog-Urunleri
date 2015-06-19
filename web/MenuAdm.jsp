@@ -27,8 +27,8 @@
                 <a href="./UsuarioServlet" id="letra">  <li> <center> Usuarios </center>  </li> </a>
                 <a href="./ClienteServlet" id="letra">  <li> <center> Clientes </center>  </li> </a>
                 <a href="./ProductoServlet" id="letra">  <li> <center> Productos </center>  </li> </a>
-                <a href="./" id="letra">  <li> <center> Pedidos </center>  </li> </a>
-                <a href="./" id="letra">  <li> <center> Ventas </center>  </li> </a>
+                <a href="#" id="letra">  <li> <center> Pedidos </center>  </li> </a>
+                <a href="#" id="letra">  <li> <center> Ventas </center>  </li> </a>
 
             </ul>
         </div>
@@ -60,7 +60,7 @@
                     <img id="ima" src="Imagenes/ajustes.png" width="20"  height="20"/>
                     <ul id="ul2">
                         <li><a id="a"><center>Perfil</center></a></li>
-                        <li ><a id="a"><center>Cerrar sesion</center></a></li>
+                        <li ><a id="a" href="./UsuarioServlet?action=salir"><center>Cerrar sesion</center></a></li>
                     </ul>
                 </li>
             </ul>
@@ -162,6 +162,7 @@
 
         }
         #a{
+            color:black;
             background: white;
             border-radius: 10px;
             text-decoration: none;
@@ -172,11 +173,14 @@
             background: #00A383;
             transition: 0.4s;
             box-shadow: inset 0 0 0 1px white;
+            color: white;
         }
         .nav > #li{
             float: left;
         }
         .nav #li #ul2 li{
+            color: black; 
+            text-decoration: none;
             list-style: none;
             padding-bottom: 2px;
         }

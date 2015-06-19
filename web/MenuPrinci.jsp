@@ -20,38 +20,50 @@
 
         <div id="fondoMe">       
             <img id="img" src="Imagenes/Logo.png" width="150" height="150"/>
+            <hr aling=left noshade size:5 width:70px color="#00a383"> 
 
         </div>
         <div class="menu" id="menu" >
             <ul id="boton">
                 <a href="Inicio.jsp" id="letra" target="Pprincipal">  <li> <center> Inicio </center>  </li> </a>
                 <a href="./CatalogoPrinServlet?action=listar" id="letra" target="Pprincipal"> <li>  <center> Catálogo </center>  </li> </a>
-                <a href="#" id="letra" target="Pprincipal">  <li>  <center> Contáctanos</center> </li> </a>  
+                <a href="Contactenos.jsp" id="letra" target="Pprincipal">  <li>  <center> Contáctanos</center> </li> </a>  
+                <a href="#" id="letra" target="Pprincipal">  <li>  <center> Regístrese</center> </li> </a>  
+                <a href="#" id="letra" onclick="abrirVentana()">  <li>  <center> Ingresar </center> </li> </a>  
             </ul>
         </div>
 
-        <a id="in" href=""> 
+       <!-- <a id="in" href=""> 
             <center>  <p id="c"  onclick="abrirVentana()"> INGRESAR </p>  </center> 
-        </a>
+        </a>-->
     </body>
     <style type="text/css">
 
         #img{
             position: absolute;
             margin-left: 7%;
+            transition: 2s;
+        }
+        #img:hover{
+            box-shadow: 0px 0px 20px #ddd;
+            transition: 2s;
         }
 
         #fondoMe{
-            margin-top: -1%;
-                position:absolute;
-            background: #00A383 ;
-            height: 98%;
-            width: 98%;
-            border-radius: 10px;
+            margin-top: -1.6%;
+            position:absolute;
+            background:	#00342A ;
+            height: 120%;
+            width: 150%;
+            margin-left: -1%;
+
+        }
+        hr{
+            margin-top: 7%; 
         }
 
         #menu{
-            margin-left:  30%; 
+            margin-left:  22%; 
 
         }
         #menu a li  {
@@ -73,14 +85,14 @@
             font-family: Arial;
             font-size: 14px;
             border-radius: 10px;
+            transition: 1s;
         }
         #letra:hover{
             background: rgba(0,0,0,0);
             color: white;
-            transition: 0.4s;
-            box-shadow: inset 0 0 0 1px white;
-            font-size: 16px;
-
+            transition: 1s;
+            box-shadow: 0px 0px 20px #ddd;
+            -webkit-transform: scale(1.2);
         }
 
         #in{

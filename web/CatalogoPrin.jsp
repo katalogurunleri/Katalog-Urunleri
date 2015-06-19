@@ -36,22 +36,19 @@
         <link rel="stylesheet" href="/resources/demos/style.css">
 
     </head>
-    <!-- <center>
-         <iframe width="95%" height="800" src="http://www.cincopa.com/media-platform/iframe.aspx?fid=AIDALc8Iadyh"  frameborder="0" allowfullscreen scrolling="si"></iframe><noscript><span>Katalog Ürünleri</span><span>Catálogo de productos</span><span>Crema natural care</span><span>Paquete promoción de cremas faciales y corporales humectantes</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1428</span><span>width</span><span> 1600</span><span>camerasoftware</span><span> Google</span><span>Anew, crema facial</span><span>Crema para el contorno de los ojos y las lineas de expresión</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 302</span><span>height</span><span> 167</span><span>Body splash</span><span>Crema, jabón líquido, y loción splash aroma a mora</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 375</span><span>height</span><span> 375</span><span>Cremas Natural milk</span><span>paquete de cremas faciales y corporales humectantes.
-             1lt</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1600</span><span>width</span><span> 1553</span><span>camerasoftware</span><span> Google</span><span>Locion secret musk</span><span>75ml</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>Locion pasion secret</span><span>50ml</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 500</span><span>Lociones splash</span><span>Lociones body splash de fresa, pera, mora, manzana y naranja
-             300ml c/u</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 332</span><span>Loción masculina 300 km</span><span>100ml</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 613</span><span>height</span><span> 800</span><span>Paquete Exclusive</span><span>fragancia masculina Exclusive 10mil, desodorante, y crema</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 600</span><span>height</span><span> 510</span><span>Kit fragancia Musk</span><span>Loción 120ml, crema y desodorante</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 474</span><span>height</span><span> 500</span><span>Loción Juvenil 300</span><span>150ml</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 300</span><span>height</span><span> 300</span><span>Labiales Golden</span><span>variedad de colores</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>Kit de Maquillaje avon</span><span>sombras, labial, rimel, y esmalte de uñas</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 300</span><span>width</span><span> 322</span><span>camerasoftware</span><span> Google</span><span>Sombras</span><span>Octetos de sombras </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 605</span><span>width</span><span> 640</span><span>camerasoftware</span><span> Google</span><span>Polvo compacto</span><span>8g Texturas variadas</span><span>originaldate</span><span> 11/1/2010 2:40:27 PM</span><span>height</span><span> 446</span><span>width</span><span> 375</span><span>orientation</span><span> 1</span><span>camerasoftware</span><span> Adobe Photoshop CS5 </span><span>Delineadores soft </span><span>variedad de colores</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 400</span><span>height</span><span> 400</span><span>Base de maquillaje</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 361</span><span>height</span><span> 398</span><span>Cremas para manos</span><span>300ml c/u</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 640</span><span>height</span><span> 613</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1428</span><span>width</span><span> 1600</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 302</span><span>height</span><span> 167</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 375</span><span>height</span><span> 375</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1600</span><span>width</span><span> 1553</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 500</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 332</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 613</span><span>height</span><span> 800</span><span>kqjq</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 600</span><span>height</span><span> 510</span><span>qkqjkq</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 474</span><span>height</span><span> 500</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 300</span><span>height</span><span> 300</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 300</span><span>width</span><span> 322</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 605</span><span>width</span><span> 640</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 361</span><span>height</span><span> 398</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 640</span><span>height</span><span> 613</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1428</span><span>width</span><span> 1600</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 302</span><span>height</span><span> 167</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 375</span><span>height</span><span> 375</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 1600</span><span>width</span><span> 1553</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 500</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 500</span><span>height</span><span> 332</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 613</span><span>height</span><span> 800</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 600</span><span>height</span><span> 510</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 474</span><span>height</span><span> 500</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 300</span><span>height</span><span> 300</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 225</span><span>height</span><span> 225</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 300</span><span>width</span><span> 322</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>height</span><span> 605</span><span>width</span><span> 640</span><span>camerasoftware</span><span> Google</span><span>originaldate</span><span> 11/1/2010 2:40:27 PM</span><span>height</span><span> 446</span><span>width</span><span> 375</span><span>orientation</span><span> 1</span><span>camerasoftware</span><span> Adobe Photoshop CS5 </span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 400</span><span>height</span><span> 400</span><span>originaldate</span><span> 1/1/0001 6:00:00 AM</span><span>width</span><span> 361</span><span>height</span><span> 398</span>
-         </noscript>
-     </center>
-    -->
+
     <div id="centro">
         <form name="Xfrom" action="./ProductoServlet?action=listar" method="POST">
             <center><h1 id="titu"> Catálogo </h1>
-            <h5 style="font-family: Arial; margin-bottom: -2%;">Clic en la imagen para mas información del producto</h5></center>
+                <h5 style="font-family: Arial; margin-bottom: -2%;">Clic en la imagen para mas información del producto</h5></center>
             <BR>
             <hr aling=left noshade size:5 width:70px color="#00a383"> 
             <%if (LP != null) {%>
             <% for (Producto pro : LP) {%>
+            <%if (pro.getCatprin().equals("Si")) {%>
+            
             <script>
+                
                 $(function() {
                     $("#dialog").dialog({
                         modal: true,
@@ -69,21 +66,25 @@
                     $("#<%=pro.getCodpro()%>").click(function() {
                         $(".<%=pro.getCodpro()%>").dialog("open");
                     });
+                    $("#zoom").elevateZoom({tint: true, tintColour: '#033', tintOpacity: 0.5});
                 });
+
+
             </script>
             <div id="dialog" class="<%=pro.getCodpro()%>"  title="<%=pro.getNombre()%>">
-                <center> <img src="ImaCatalogo/<%=pro.getFoto()%>" height="250" width="250"  id="opener"/> 
-                    <p width="50%">Código: <%=pro.getCodpro()%> <br> Descripción: <%=pro.getDescripcion()%></p>
-                </center>
+                <center> <img id="zoom" src="ImaCatalogo/<%=pro.getFoto()%>" height="250" width="250"  id="opener"/>  </center>
+                <p width="50%"><b>Código:</b> <%=pro.getCodpro()%> <br> <b>Descripción:</b> <%=pro.getDescripcion()%></p>
+
             </div>
             <div class="menu" id="menu" >
                 <ul id="boton">
                     <li id="letra"> 
                     <center><img id="<%=pro.getCodpro()%>" id="img" src="ImaCatalogo/<%=pro.getFoto()%>" width="80" height="80">
                         <br>
-                        <p id="txtcat"><%=pro.getNombre()%></p>  </center>
+                        <p id="txtcat"><b><%=pro.getNombre()%></b></p>  </center>
                     </li> 
             </div>
+            <%}%>  
             <%}%>  
             <%}%>  
             <style type="text/css">
@@ -96,7 +97,6 @@
                     box-shadow: 0px 0px 20px #ddd;
                     transition: 2s;
                     -webkit-transform: scale(1.2);
-                    background: url(Imagenes/lupa.png) no-repeat;
                 }
 
                 #img{
@@ -131,7 +131,7 @@
                 }
                 #titu{
                     font-family: Arial;
-                    color: #00a383;
+                    color: #00342A;
                     font-size: 250%;
                     margin-bottom: -2%;
                 }

@@ -83,45 +83,15 @@
             <center> <img src="ImaCatalogo/7.jpg" width="80" height="80"/><br>
                 <p id="txtcat"> código #055n2 </p>  </center>
             </li>
-
-<!-- 
-SALTO DE LINEA
--->
-
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/8.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p>  </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/9.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p>  </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/c1.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p>  </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/c2.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p>  </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/c3.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p> </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/pic1.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p>  </center>
-            </li>
-            <li id="letra">   
-            <center> <img src="ImaCatalogo/pic2.jpg" width="80" height="80"/><br>
-                <p id="txtcat"> código #055n2 </p> </center>
-            </li>
         </ul>
     </div>
 </div>
 
 
 <style>
+    body{
+     //   background: #B0FFF0;
+    }
     section {
         display: block;
         overflow: hidden;

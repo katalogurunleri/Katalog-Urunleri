@@ -150,24 +150,25 @@ public class UsuarioServlet extends HttpServlet {
                         request.setAttribute("listado", un.listadoUsuarios());
                     }
                     if (resp.equals("NO SIRVE")) {
-                        men += "<br>Su contraseña no cumple lo siguiente: ";
+                        men += "<br>La contraseña que usted ha digitado no cumple con los siguientes parámetros:\n"
+                                + "Se debe agregar como mínimo: ";
                         if (mayusc == 0) {
-                            men += "<br>• Agrege 1 o mas de 1 letra mayuscula para su contraseña";
+                            men += "<br>• Una letra mayúscula";
                         }
                         if (minusc < 3) {
-                            men += "<br>•Agrege 3 o mas de 3 letras minusculas para su contraseña";
+                            men += "<br>•Tres letras minúsculas";
                         }
                         if (minusc < 3) {
-                            men += "<br>•Agrege 3 o mas de 3 numeros para su contraseña";
+                            men += "<br>•3 números";
                         }
                         if (longi == 0) {
-                            men += "<br>•Use mas de 8 caracteres y menos de 16 para su contraseña ";
+                            men += "<br>•La cantidad de caracteres total debe estar entre 8 y 16";
                         }
-                        men += "<br><br>Por seguridad mejore lo anterior dicho ";
+                        men += "<br><br>Para evitar problemas de seguridad, porfavor cumpla con lo dicho anteriormente. ";
                     }
 
                 } else {
-                    men = "Las contraseñas no coinsiden";
+                    men = "Las contraseñas no coinciden";
                 }
 
             } catch (Exception er) {

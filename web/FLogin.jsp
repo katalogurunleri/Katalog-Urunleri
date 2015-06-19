@@ -38,10 +38,10 @@
                         <td id="text1"> <center> <input type="password" name="txtclave" id="contraseña" size="20" maxlength="15" /> </center> </td>                    
                         </tr>
                         <tr> 
-                            <td colspan="2"> <center> <button id="Ingresar" type="submit" name="action"  value="ingresar" class="btn1" > Ingresar </button> </center> </td>
+                            <td colspan="2"> <center> <button  style="cursor: pointer" id="Ingresar" type="submit" name="action"  value="ingresar" class="btn1" > Ingresar </button> </center> </td>
                         </tr>
                         <tr>
-                            <td colspan="2" id="text"><a onclick="abrirVentana()" ><center> <u>¿Olvidó su contraseña?</u></center></a></td>
+                            <td colspan="2" id="text"><a style="cursor: pointer" onclick="abrirVentana()" ><center> <u>¿Olvidó su contraseña?</u></center></a></td>
                         </tr>
                     </table>
                     <%if (mensajeError != null) {%>

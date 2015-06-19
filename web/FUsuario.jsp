@@ -38,7 +38,7 @@
     <body>
         <div id="centro">
             <center><h1 id="titu"> Usuario </h1></center><br>
-            <hr aling=left noshade size:5 width:70px color="#00a383"> 
+            <hr aling=left noshade size:5 width:70px color="#B0FFF0"> 
             <form name="frmusuarios" action="./UsuarioServlet" method="POST">
                 <div id="datou">
                     <fieldset id="borde">
