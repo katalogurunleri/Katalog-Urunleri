@@ -18,21 +18,35 @@
         <td id="espa"><button id="fboton" class="bot" type="submit" name="action" value="listar">Listar</button> </td>     
 
     </tr></table>
+<br>
 <style type="text/css">
+
+
+
     #fboton{
-        background: white;
+        background: #00342A;
         font-family: Arial;
-        color:  black;
-        font-size: 120%;
+        height: 40px;
+        width: 100px;
+        color:  white;
+        font-size: 80%;
         border: none;
         border-radius: 10px 10px;
-        // margin-left: 2%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-left:10%;       
+        transition: 1s;
+
+
     }
     #fboton:hover{
         color: white;
         background: #00A383;
-        font-size: 130%;
-        transition: 0.4s;
+        font-size: 120%;
+        transition: 1s;
         box-shadow: inset 0 0 0 1px black;
+        -webkit-transform: scale(1.1);
     }
 </style>

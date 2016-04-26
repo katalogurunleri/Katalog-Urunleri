@@ -51,7 +51,8 @@ public class UsuarioN {
         Conexion con = new Conexion();
         String mensajeError = "";
         String u = user.getUsuario();
-        String nombre = user.getNombre();
+        String nombre = user.getNombre();        
+        String doc = user.getDocumento();
         String clave = user.getClave();
         String perfil = user.getPerfil();
         String estado = user.getEstado();
@@ -76,6 +77,9 @@ public class UsuarioN {
         if ("".equals(u) || null == u) {
             mensajeError = "<br>Debe ingresar el usuario";
         }// fin si
+        if ("".equals(doc) || null == doc) {
+            mensajeError = "<br>Debe ingresar el documento";
+        }// fin si
 // Para validar que si se hayan ingresado todos los
 // campos obligatorios
         if (!"".equals(mensajeError)) {
@@ -88,7 +92,7 @@ public class UsuarioN {
         }
 
         mensajeError = dao.getInsertaUsuario(con.getCon(), u,
-                nombre, clave, perfil, estado, correo, foto);
+                nombre, doc, clave, perfil, estado, correo, foto);
         /*Para capturar errores al guardar el dato(Usuario)  */
         if (!"".equals(mensajeError)) {
             throw new Exception(mensajeError);
@@ -105,6 +109,7 @@ public class UsuarioN {
         String mensajeError = "";
         String u = user.getUsuario();
         String nombre = user.getNombre();
+        String doc = user.getDocumento();
         String clave = user.getClave();
         String perfil = user.getPerfil();
         String estado = user.getEstado();
@@ -114,9 +119,11 @@ public class UsuarioN {
         if ("".equals(u) || null == u) {
             mensajeError += "<br>Debe ingresar el usuario";
         }// fin si
-
         if ("".equals(nombre) || null == nombre) {
             mensajeError += "<br>Debe ingresar el nombre";
+        }// fin si
+        if ("".equals(doc) || null == doc) {
+            mensajeError += "<br>Debe ingresar el documento";
         }// fin si
         if ("".equals(clave) || null == clave) {
             mensajeError += "<br>Debe ingresar la  clave";
@@ -143,7 +150,7 @@ public class UsuarioN {
          * 
          * Lanzamos una exepcion 
          */
-        mensajeError = dao.getActualizarUsuario(con.getCon(), u, nombre, clave, perfil, estado, correo, foto);
+        mensajeError = dao.getActualizarUsuario(con.getCon(), u, nombre, doc, clave, perfil, estado, correo, foto);
         /*Para capturar errores al guardar el dato(Usuario)  */
         if (!"".equals(mensajeError)) {
             throw new Exception(mensajeError);

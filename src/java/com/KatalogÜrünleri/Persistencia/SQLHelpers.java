@@ -4,26 +4,26 @@ public class SQLHelpers {
 
     //Lista de los usuarios
     public static String getUsuario() {
-        return "SELECT usuario, nombre,clave,estado, perfil, correo, foto FROM tblusuario ";
+        return "SELECT usuario, nombre, documento, clave, estado, perfil, correo, foto FROM tblusuario ";
     }//fin método     
 //Consultar Usuario
 
     public static String getUsuario(String user) {
-        return "SELECT usuario, nombre,clave,perfil, estado, correo, foto FROM tblusuario where usuario ='" + user + "' ";
+        return "SELECT usuario, nombre, documento,clave,perfil, estado, correo, foto FROM tblusuario where usuario ='" + user + "' ";
     }//fin método     
 //Insertar Usuario
 
     public static String getUsuarioEmail(String correo) {
-        return "SELECT usuario, nombre,clave,perfil, estado, correo, foto FROM tblusuario where correo ='"+correo+"'";
+        return "SELECT usuario, nombre, documento,clave,perfil, estado, correo, foto FROM tblusuario where correo ='"+correo+"'";
     }
 
     public static String insertarUsuario() {
-        return "INSERT INTO tblusuario(usuario,nombre, clave,perfil, estado, correo, foto)values(?,?,?,?,?,?,?)";
+        return "INSERT INTO tblusuario(usuario,nombre, documento, clave,perfil, estado, correo, foto)values(?,?,?,?,?,?,?,?)";
     }
 //Editar usuario
 
     public static String ActualizarUsuario() {
-        return "UPDATE tblusuario set nombre=?, clave=? ,perfil=?,estado=?, correo=?, foto=? WHERE usuario=?";
+        return "UPDATE tblusuario set nombre=?, documento=?,clave=? ,perfil=?,estado=?, correo=?, foto=? WHERE usuario=?";
     }
 
 //Validar Ingreso Al Sistema

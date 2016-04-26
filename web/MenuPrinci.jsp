@@ -28,7 +28,7 @@
                 <a href="Inicio.jsp" id="letra" target="Pprincipal">  <li> <center> Inicio </center>  </li> </a>
                 <a href="./CatalogoPrinServlet?action=listar" id="letra" target="Pprincipal"> <li>  <center> Catálogo </center>  </li> </a>
                 <a href="Contactenos.jsp" id="letra" target="Pprincipal">  <li>  <center> Contáctanos</center> </li> </a>  
-                <a href="#" id="letra" target="Pprincipal">  <li>  <center> Regístrese</center> </li> </a>  
+                <a href="Registrese.jsp" id="letra" target="Pprincipal">  <li>  <center> Regístrese</center> </li> </a>  
                 <a href="#" id="letra" onclick="abrirVentana()">  <li>  <center> Ingresar </center> </li> </a>  
             </ul>
         </div>
@@ -59,7 +59,7 @@
 
         }
         hr{
-            margin-top: 7%; 
+            margin-top: 6.5%; 
         }
 
         #menu{
@@ -93,17 +93,6 @@
             transition: 1s;
             box-shadow: 0px 0px 20px #ddd;
             -webkit-transform: scale(1.2);
-        }
-
-        #in{
-            text-decoration: none;
-            position: absolute;
-            height: 20%;
-            width: 8%;
-            background: #5fd3b3;
-            margin-left: 19%;
-            border-radius: 10px;
-            color: white;
         }
 
         #c{

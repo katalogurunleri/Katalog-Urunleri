@@ -4,6 +4,7 @@
 <%
     String user = request.getParameter("txtusuario");
     String nombre = request.getParameter("txtnombre");
+    String doc = request.getParameter("txtdocu");
     String clave = request.getParameter("txtclave");
     String conclave = request.getParameter("txtconclave");
     String perfil = request.getParameter("cboperfil");
@@ -19,6 +20,7 @@
     if (datou != null) {
         user = datou.getUsuario();
         nombre = datou.getNombre();
+        doc = datou.getDocumento();
         clave = datou.getClave();
         conclave = clave;
         perfil = datou.getPerfil();
@@ -34,44 +36,50 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset=utf-8 />
+        <script type="text/javascript" src="jq/Nodo.js"></script>
     </head>
     <body>
         <div id="centro">
             <center><h1 id="titu"> Usuario </h1></center><br>
-            <hr aling=left noshade size:5 width:70px color="#B0FFF0"> 
+            <hr aling=left noshade size:5 width:70px color="#00a383"> 
             <form name="frmusuarios" action="./UsuarioServlet" method="POST">
                 <div id="datou">
                     <fieldset id="borde">
-                        <legend id="tibo">DATOS DEL USUARIO</legend>
+                        <legend id="tibo"><b>DATOS DEL USUARIO</b></legend>
                         <table>
                             <tr>
-                                <td id="tex">Usuario*</td>
-                                <td><input type="text" name="txtusuario" value="<%= user != null ? user : ""%>" size="30" maxlength="5" </td>
+                                <td id="tex"><b>Usuario*</b></td>
+                                <td><input type="text" name="txtusuario" value="<%= user != null ? user : ""%>" size="30" maxlength="10" </td>
                             </tr>
                             <tr>
-                                <td id="tex">Nombre*</td>
+                                <td id="tex"><b>Nombre*</b></td>
                                 <td><input type="text" name="txtnombre" value="<%= nombre != null ? nombre : ""%>" size="30" maxlength="30"></td>
                             </tr>
                             <tr>
-                                <td id="tex">Contraseña*</td>
-                                <td><input type="password" name="txtclave" value="<%= clave != null ? clave : ""%>" size="30" maxlength="5"></td>
+                                <td id="tex"><b>Documento*</b></td>
+                                <td><input type="text" name="txtdocu" value="<%= doc != null ? doc : ""%>" size="30" maxlength="15"></td>
                             </tr>
                             <tr>
-                                <td id="tex">Confirma la contraseña*</td>
-                                <td><input type="password" name="txtconclave" value="<%= conclave != null ? conclave : ""%>" size="30" maxlength="5"></td>
+                                <td id="tex"><b>Contraseña</b>*</td>
+                                <td><input type="password" name="txtclave" value="<%= clave != null ? clave : ""%>" size="30" maxlength="15"></td>
                             </tr>
                             <tr>
-                                <td id="tex">Perfil* </td>
+                                <td id="tex"><b>Confirma la contraseña*</b></td>
+                                <td><input type="password" name="txtconclave" value="<%= conclave != null ? conclave : ""%>" size="30" maxlength="15"></td>
+                            </tr>
+                            <tr>
+                                <td id="tex"><b>Perfil*</b> </td>
                                 <td>
                                     <select name="cboperfil">
                                         <option value=""> ...Seleccione...</option>
                                         <option value="Administrador"<%if ("Administrador".equals(perfil)) {%> selected<%}%> > Administrador </option>
-                                        <option value="Auxiliar"<%if ("Auxiliar".equals(perfil)) {%> selected<%}%>>  Auxiliar</option>
+                                        <option value="Usuario"<%if ("Usuario".equals(perfil)) {%> selected<%}%>>  Usuario</option>
+                                        <option value="Soporte"<%if ("Soporte".equals(perfil)) {%> selected<%}%>>  Soporte</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="tex">Estado*</td>
+                                <td id="tex"><b>Estado*</b></td>
                                 <td>
                                     <select name="cboestado">
                                         <option value="" >...Seleccione...</option>
@@ -81,8 +89,8 @@
                                 </td>
                             </tr>
                             <tr> 
-                                <td id="tex">Correo *</td>
-                                <td><input type="text" name="txtcorreo" value="<%= correo != null ? correo : ""%>" size="30" maxlength="30"> </td>
+                                <td id="tex"><b>Correo* </b> </td>
+                                <td><input type="text" name="txtcorreo" value="<%= correo != null ? correo : ""%>" size="30" maxlength="60"> </td>
                             </tr>
                             <tr>
                                 <%
@@ -98,12 +106,14 @@
                                 </td>
                                 <td><input type="file" name="filefoto" value="<%=foto%>" ></td>
                             </tr>
+                            <tr> 
+                                <td colspan="2" id="cam">Campos con asterisco (*) son obligatorios</td>
+                            </tr>
                         </table> 
-                        <h4 id="cam">Campos con asterisco (*) son obligatorios</h4>            
 
                     </fieldset>
                 </div> 
-                <center> <br><br>  <jsp:include page="FBotones.jsp" flush="true"/> <br><br>  </center>
+                <center> <br><br>  <jsp:include page="FBotones.jsp" flush="true"/> </center>
 
             </form>
         </div>
@@ -116,9 +126,9 @@
                 <tr>
                     <td >Usuario</td>    
                     <td >Nombre</td>    
+                    <td >Documento</td>    
                     <td >Perfil</td>    
                     <td >Estado</td>    
-                    <td >Correo</td>  
                     <td >Foto</td>  
                     <td >Buscar</td>  
                 </tr>
@@ -127,10 +137,20 @@
                 <tr>
                     <td ><%=us.getUsuario()%>  </td>    
                     <td ><%=us.getNombre()%></td>
+                    <td ><%=us.getDocumento()%></td>
                     <td ><%=us.getPerfil()%></td>
                     <td ><%=us.getEstado()%></td>
-                    <td ><%=us.getCorreo()%></td>
-                    <td> <img id="perfil" src="ImagePerfil/<%=us.getFoto()%>" width="50" height="50"></td>
+                    <%
+                        if (us.getFoto() == null) {
+                            us.setFoto("");
+                        }
+                        if (us.getFoto().equals("")) {
+                    %>
+                    <td><img id="perfil" src="ImagePerfil/perfil.jpg" width="70" height="70" />
+                        <% } else {%>
+                    <td><img id="perfil" src="<%="ImagePerfil/" + us.getFoto()%>" width="70" height="70" />
+                        <%}%>
+                    </td>
                     <td> <a href="./UsuarioServlet?action=buscar&txtusuario=<%=us.getUsuario()%>"> <img src="Imagenes/lupa.png"> </a></td>
                 </tr>
                 <%}%>  
@@ -138,7 +158,7 @@
             </table> 
             <%}%>  
         </div>
-
+        
     </body>
     <style type="text/css">
         body{
@@ -163,26 +183,27 @@
             height: 4%;
             margin-left: 1%;
             margin-bottom: 2%;
-            margin-top: 3%;
+            margin-top: 5%;
             position:relative;      
             -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
         }
         #tex{
-            color: #00a383;
-            font-size: 20px;
             font-family: Arial;
+            font-size: 105%;
+            color:#00A383;
         }
         #cam{
-            margin-top: 0%;
             color: #00a383;
+            font-size: 80%;
+            font-family: Arial;
         }
         #titu{
             font-family: Arial;
-            color: #00a383;
+            color: #00342A;
             font-size: 250%;
-            margin-bottom: -2%;
+            margin-bottom: -7%;
         }
         #imaperfil{
             margin-top: -40%;
@@ -190,7 +211,7 @@
         }
         h3{
             font-family: Arial;
-            color: #00a383;
+            color: #00342A;
             margin-bottom: -1%;
         }
         h5{
@@ -198,20 +219,19 @@
             color: #00a383;
         }
         #tblu{ 
-            width:740px;
-            height: 420px;
-            margin-left: 38%;
-            margin-top: -45%;
-            position:absolute;
+            width: 68%;
+            height: 400px;
+            margin-left: 40%;
+            margin-top: -42%;
+            position: absolute;
             overflow-x: hidden;
-
             /*-webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;*/
         }
         .tabla {
             margin:0px;padding:0px;
-            width:100%;
+            width: 85% !important;
             box-shadow: 10px 10px 5px #888888;
             border:1px solid #000000;
 

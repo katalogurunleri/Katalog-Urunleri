@@ -1,3 +1,9 @@
+<%-- 
+    Document   : FReqSolucionados
+    Created on : 14/04/2016, 01:25:22 AM
+    Author     : USER
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <br>
-    <center> <h1 style="color: #00A383 "> <br>BIENVENIDO </h1> </center>
-
-</body>
+        <h1>Hello World!</h1>
+    </body>
 </html>

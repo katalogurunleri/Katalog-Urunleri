@@ -25,10 +25,10 @@
 
         <div class="menuMe" id="menuMe" >
             <ul id="boton">
-                <a href="./UsuarioServlet" id="letra">  <li> <center> Usuarios </center>  </li> </a>
-                <a href="./ProductoServlet" id="letra">  <li> <center> Productos </center>  </li> </a>
-                <a href="./PedidosServlet" id="letra">  <li> <center> Pedidos </center>  </li> </a>
-                <a href="./VentasServlet" id="letra">  <li> <center> Ventas </center>  </li> </a>
+                <a href="./ReqSinIniciarServlet" id="letra">  <li> <center> Req. en espera </center>  </li> </a>
+                <a href="./RequerimientosServlet" id="letra">  <li> <center> Req. en proceso </center>  </li> </a>
+                <a href="./ReqSolucionadosServlet" id="letra">  <li> <center> Req. Solucionados </center>  </li> </a>
+                <a href="./BaseConocimientoServlet" id="letra">  <li> <center> Base de conocimiento </center>  </li> </a>
             </ul>
         </div>
         <div id="infoPer">

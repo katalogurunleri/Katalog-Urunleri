@@ -4,6 +4,7 @@ public class Usuario {
 
     String usuario;
     String nombre;
+    String documento;
     String clave;
     String conclave;
     String perfil;
@@ -14,9 +15,10 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String usuario, String nombre, String clave, String perfil, String estado, String correo, String foto) {
+    public Usuario(String usuario, String nombre, String documento, String clave, String perfil, String estado, String correo, String foto) {
         this.usuario = usuario;
         this.nombre = nombre;
+        this.documento = documento;
         this.clave = clave;
         this.perfil = perfil;
         this.estado = estado;
@@ -41,6 +43,14 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+    
     public String getClave() {
         return clave;
     }

@@ -18,24 +18,30 @@
     </head>
     <body>    
         <% if ("Activo".equals(estado)) {%>  
-        <% if ("Administrador".equals(perfil)) {%>      
-        <table style="width: 100%; border: 0px;" >
-            <tr>
-            </tr>
-            <tr>
-                <td><jsp:include page="MenuAdm.jsp" flush="true"/></td>
-            </tr>
-            <tr>
-                <td><jsp:include page="<%=targetModulo%>" flush="true"/></td>
-            </tr>
-            <tr>
-                <td><jsp:include page="Pie.jsp" flush="true"/></td>
-            </tr>
+            <% if ("Administrador".equals(perfil) || ("Soporte".equals(perfil)) || ("Usuario".equals(perfil))) {%>      
+            <table style="width: 100%; border: 0px;" >
+                <tr>
+                </tr>
+                <tr>
+                    <%if ("Administrador".equals(perfil)) {%>
+                        <td><jsp:include page="MenuAdm.jsp" flush="true"/></td>
+                    <%}%>
+                    <%if ("Soporte".equals(perfil)) {%>
+                        <td><jsp:include page="MenuSop.jsp" flush="true"/></td>
+                    <%}%>
+                    <%if ("Usuario".equals(perfil)) {%>
+                        <td><jsp:include page="MenuUsu.jsp" flush="true"/></td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <td><jsp:include page="<%=targetModulo%>" flush="true"/></td>
+                </tr>
+                <tr>
+                    <td><jsp:include page="Pie.jsp" flush="true"/></td>
+                </tr>
 
-        </table>        
-        <%} else {%> 
-            <h1> USTED NO ES ADMINISTRADOR </h1>
-        <%}%>
+            </table>                    
+            <%}%>
         <%} else {%>
             <h1>USTED NO ESTA ACTIVO</h1>
         <%}%>

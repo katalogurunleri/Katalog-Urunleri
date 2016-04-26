@@ -46,9 +46,9 @@
             <%if (LP != null) {%>
             <% for (Producto pro : LP) {%>
             <%if (pro.getCatprin().equals("Si")) {%>
-            
+
             <script>
-                
+
                 $(function() {
                     $("#dialog").dialog({
                         modal: true,

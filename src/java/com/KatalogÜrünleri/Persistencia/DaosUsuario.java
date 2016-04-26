@@ -23,11 +23,12 @@ public class DaosUsuario {
                 Usuario u = new Usuario();
                 u.setUsuario(registros.getString(1));
                 u.setNombre(registros.getString(2));
-                u.setClave(registros.getString(3));
-                u.setEstado(registros.getString(4));
-                u.setPerfil(registros.getString(5));
-                u.setCorreo(registros.getString(6));
-                u.setFoto(registros.getString(7));
+                u.setDocumento(registros.getString(3));
+                u.setClave(registros.getString(4));
+                u.setEstado(registros.getString(5));
+                u.setPerfil(registros.getString(6));
+                u.setCorreo(registros.getString(7));
+                u.setFoto(registros.getString(8));
                 resultado.add(u);
             }// fin mientras
 
@@ -78,11 +79,12 @@ public class DaosUsuario {
             while (r.next()) {
                 u.setUsuario(r.getString(1));
                 u.setNombre(r.getString(2));
-                u.setClave(r.getString(3));
-                u.setPerfil(r.getString(4));
-                u.setEstado(r.getString(5));
-                u.setCorreo(r.getString(6));
-                u.setFoto(r.getString(7));
+                u.setDocumento(r.getString(3));
+                u.setClave(r.getString(4));
+                u.setPerfil(r.getString(5));
+                u.setEstado(r.getString(6));
+                u.setCorreo(r.getString(7));
+                u.setFoto(r.getString(8));
 
             }// fin mientras
         } catch (Exception e) {
@@ -165,6 +167,7 @@ public class DaosUsuario {
             Connection con,
             String user,
             String nombre,
+            String doc,
             String clave,
             String perfil,
             String estado,
@@ -185,12 +188,13 @@ public class DaosUsuario {
              values(1?,2?,3?,4?,5?)";
              */
             p.setString(1, user);
-            p.setString(2, nombre);
-            p.setString(3, clave);
-            p.setString(4, perfil);
-            p.setString(5, estado);
-            p.setString(6, correo);
-            p.setString(7, foto);
+            p.setString(2, nombre);            
+            p.setString(3, doc);
+            p.setString(4, clave);
+            p.setString(5, perfil);
+            p.setString(6, estado);
+            p.setString(7, correo);
+            p.setString(8, foto);
             p.execute();// Para acciones de actualizacion
 // e inserción de datos, eliminación y otros
 // es distinto a<>ó !=  executeQuery()-- solo consulta de datos
@@ -216,6 +220,7 @@ public class DaosUsuario {
             Connection con,
             String user,
             String nombre,
+            String doc,
             String clave,
             String perfil,
             String estado,
@@ -224,13 +229,14 @@ public class DaosUsuario {
         String res = "";
         try {
             PreparedStatement p = con.prepareStatement(SQLHelpers.ActualizarUsuario());
-            p.setString(7, user);
+            p.setString(8, user);
             p.setString(1, nombre);
-            p.setString(2, clave);
-            p.setString(3, perfil);
-            p.setString(4, estado);
-            p.setString(5, correo);
-            p.setString(6, foto);
+            p.setString(2, doc);
+            p.setString(3, clave);
+            p.setString(4, perfil);
+            p.setString(5, estado);
+            p.setString(6, correo);
+            p.setString(7, foto);
             p.execute();// Para acciones de actualizacion
 // e inserción de datos, eliminación y otros
 // es distinto a<>ó !=  executeQuery()-- solo consulta de datos

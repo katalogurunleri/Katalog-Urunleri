@@ -42,28 +42,28 @@
             <form name="Xfrom" action="./ProductoServlet" method="POST">
                 <div id="datop">
                     <fieldset id="borde">
-                        <legend id="tibo">DATOS DEL PRODUCTO</legend>
+                        <legend id="tibo"><b>DATOS DEL PRODUCTO</b></legend>
                         <table>
                             <tr>
-                                <td id="tex">Código*</td>
+                                <td id="tex"><b>Código*</b></td>
                                 <td><input type="text" name="txtcodpro" value="<%=cod != null ? cod : ""%>" size="20" maxlength="6"> </td>
                             </tr>
                             <tr>
-                                <td id="tex">Nombre*</td>
+                                <td id="tex"><b>Nombre*</b></td>
                                 <td><input type="text" name="txtnombre" value="<%=nom != null ? nom : ""%>" size="20" maxlength="50"> </td>
                             </tr>
                             <tr>
-                                <td id="tex">Descripción*</td>
+                                <td id="tex"><b>Descripción*</b></td>
                                 <td> 
                                     <textarea type="text" rows="3" cols="30" name="txtdescrip" value="<%=des != null ? des : ""%>"   maxlength="300"><%=des != null ? des : ""%></textarea>
                                 </td>
                             </tr>
                             <tr>
-                                <td id="tex">Existencias*</td>
+                                <td id="tex"><b>Existencias*</b></td>
                                 <td><input type="text" name="txtexis" value="<%=exi != null ? exi : ""%>" size="20" maxlength="50"> </td>
                             </tr>
                             <tr>
-                                <td id="tex">Valor*</td>
+                                <td id="tex"><b>Valor*</b></td>
                                 <td><input type="text" name="txtvalor" value="<%=val != null ? val : ""%>" size="20" maxlength="7"> </td>
                             </tr>
                             <tr>
@@ -81,7 +81,7 @@
                                 <td><input type="file" name="filefoto" value="<%=fot%>" ></td>
                             </tr>
                             <tr>
-                                <td id="tex">Estado*</td>
+                                <td id="tex"><b>Estado*</b></td>
                                 <td>
                                     <select name="cboestado">
                                         <option value="" >...Seleccione...</option>
@@ -91,7 +91,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td id="tex">Catálogo principal*</td>
+                                <td id="tex"><b>Catálogo principal*</b></td>
                                 <td>
                                     <select name="cbocatprin">
                                         <option value="" >...Seleccione...</option>
@@ -100,9 +100,11 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr> 
+                                <td colspan="2" id="cam">Campos con asterisco (*) son obligatorios</td>
+                            </tr>
                         </table> 
-                        <br>
-                        <h4 id="cam">Campos con asterisco (*) son obligatorios</h4>
+
                     </fieldset>
                 </div>
                 <center> <br><br> <jsp:include page="FBotones.jsp" flush="true"/></center>
@@ -164,26 +166,27 @@
             height: 4%;
             margin-left: 1%;
             margin-bottom: 2%;
-            margin-top: 3%;
+            margin-top: 5%;
             position:relative;      
             -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
         }
         #tex{
-            color: #00a383;
-            font-size: 20px;
             font-family: Arial;
+            font-size: 105%;
+            color:#00A383;
         }
         #cam{
-            margin-top: 0%;
             color: #00a383;
+            font-size: 80%;
+            font-family: Arial;
         }
         #titu{
             font-family: Arial;
-            color: #00a383;
+            color: #00342A;
             font-size: 250%;
-            margin-bottom: -2%;
+            margin-bottom: -7%;
         }
         #imaperfil{
             margin-top: -40%;
@@ -191,7 +194,7 @@
         }
         h3{
             font-family: Arial;
-            color: #00a383;
+            color: #00342A;
             margin-bottom: -1%;
         }
         h5{
@@ -199,13 +202,12 @@
             color: #00a383;
         }
         #tblu{ 
-            margin-left: 38%;
+            margin-left: 40%;
             width:725px;
             height: 300px;
-            margin-top: -45%;
+            margin-top: -39%;
             position:absolute;
             overflow-x: hidden;
-
             /*-webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
             box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;*/

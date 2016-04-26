@@ -24,6 +24,22 @@
         <servlet-name>CatalogoPrinServlet</servlet-name>
         <servlet-class>com.KatalogÜrünleri.Servlets.CatalogoPrinServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RequerimientosServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.RequerimientosServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReqSolucionadosServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.ReqSolucionadosServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BaseConocimientoServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.BaseConocimientoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReqSinIniciarServlet</servlet-name>
+        <servlet-class>com.KatalogÜrünleri.Servlets.ReqSinIniciarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Autenticacion</servlet-name>
         <url-pattern>/Autenticacion</url-pattern>
@@ -47,6 +63,22 @@
     <servlet-mapping>
         <servlet-name>CatalogoPrinServlet</servlet-name>
         <url-pattern>/CatalogoPrinServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RequerimientosServlet</servlet-name>
+        <url-pattern>/RequerimientosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReqSolucionadosServlet</servlet-name>
+        <url-pattern>/ReqSolucionadosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BaseConocimientoServlet</servlet-name>
+        <url-pattern>/BaseConocimientoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReqSinIniciarServlet</servlet-name>
+        <url-pattern>/ReqSinIniciarServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

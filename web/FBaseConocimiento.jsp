@@ -1,3 +1,9 @@
+<%-- 
+    Document   : BaseConocimiento
+    Created on : 14/04/2016, 01:25:34 AM
+    Author     : USER
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -1,119 +1,31 @@
-<%@page import="com.KatalogÜrünleri.Entidades.Cliente"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    String idecli = request.getParameter("txtidecliente");
-    String nom = request.getParameter("txtnombre");
-    String ape = request.getParameter("txtapellido");
-    String corr = request.getParameter("txtcorreo");
-    String tele = request.getParameter("txttelefono");
-    String dire = request.getParameter("txtdireccion");
-    String estado = request.getParameter("cboestado");
 
-    String men = (String) request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : "";
-
-    List<Cliente> LC = (List<Cliente>) request.getAttribute("listado");
-//vamos a recibir atributo para la consulta de un dato
-    Cliente datoc = (Cliente) request.getAttribute("datocliente") != null ? (Cliente) request.getAttribute("datocliente") : null;
-    if (datoc != null) {
-        idecli = datoc.getIdeCliente();
-        nom = datoc.getNombres();
-        ape = datoc.getApellidos();
-        corr = datoc.getCorreo();
-        tele = datoc.getTelefono();
-        dire = datoc.getDireccion();
-        estado = datoc.getEstado();
-    }// fin si
-
-%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset=utf-8 />
     </head>
     <body>
-
         <div id="centro">
-            <center><h1 id="titu"> Cliente </h1></center>
-            <BR>
+            <center><h1 id="titu"> Requerimientos en espera </h1></center><br>
             <hr aling=left noshade size:5 width:70px color="#00a383"> 
-            <form name="Xfrom" action="./ClienteServlet" method="POST">
-                <div id="datoc">
-                    <fieldset id="borde">
-                        <legend id="tibo"><b>DATOS DEL CLIENTE</b></legend>
-                        <table>
-                            <tr>
-                                <td id="tex"><b>Cédula*</b></td>
-                                <td><input type="text" name="txtidecliente" value="<%=idecli != null ? idecli : ""%>" size="20" maxlength="10"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Nombre (s)*</b></td>
-                                <td><input type="text" name="txtnombre" value="<%=nom != null ? nom : ""%>" size="20" maxlength="30"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Apellido (s)*</b></td>
-                                <td><input type="text" name="txtapellido" value="<%=ape != null ? ape : ""%>" size="20" maxlength="30"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Correo*</b></td>
-                                <td><input type="text" name="txtcorreo" value="<%=corr != null ? corr : ""%>" size="20" maxlength="40"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Teléfono*</b></td>
-                                <td><input type="text" name="txttelefono" value="<%=tele != null ? tele : ""%>" size="20" maxlength="7"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Dirección*</b></td>
-                                <td><input type="text" name="txtdireccion" value="<%=dire != null ? dire : ""%>" size="20" maxlength="30"> </td>
-                            </tr>
-                            <tr>
-                                <td id="tex"><b>Estado*</b></td>
-                                <td>
-                                    <select name="cboestado">
-                                        <option value="" >...Seleccione...</option>
-                                        <option value="Activo"<%if ("Activo".equals(estado)) {%>selected<%}%> >Activo</option>
-                                        <option value="Inactivo"<%if ("Inactivo".equals(estado)) {%>selected<%}%> >Inactivo</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr> 
-                                <td colspan="2" id="cam">Campos con asterisco (*) son obligatorios</td>
-                            </tr>
-                        </table> 
-
-                    </fieldset>
-                </div>
-                <center> <br><br>  <jsp:include page="FBotones.jsp" flush="true"/></center>
-            </form>
-        </div>
-        <div id="tblu">
-            <center> <h3><%=men%></h3> </center>
-            <BR>
-            <%if (LC != null) {%>
-
+            <center>
             <table class="tabla">
                 <tr>
-                    <td >Ide. Cliente</td>    
-                    <td >Nombre (s)</td>    
-                    <td >Apellido (s)</td>    
-                    <td >Correo</td>   
-                    <td >Teléfono</td>   
-                    <td >Estado</td> 
-                    <td>Buscar</td> 
-                </tr>
-                <% for (Cliente cli : LC) {%>
-                <tr >
-                    <td ><%=cli.getIdeCliente()%> </td>    
-                    <td ><%=cli.getNombres()%> </td>    
-                    <td ><%=cli.getApellidos()%> </td>    
-                    <td ><%=cli.getCorreo()%> </td>    
-                    <td ><%=cli.getTelefono()%> </td>    
-                    <td ><%=cli.getEstado()%> </td>  
-                    <td> <a href="./ClienteServlet?action=buscar&txtidecliente=<%=cli.getIdeCliente()%>"> <img src="Imagenes/lupa.png"> </a></td>
-                </tr>
-                <%}%>  
-            </table> 
-            <%}%>  
+                    <td >Nro.</td>    
+                    <td >Título</td>    
+                    <td >Detalle</td>    
+                    <td >Autor</td>  
+                </tr>  
+                <tr>
+                    <td >1</td>    
+                    <td >Ejemplo</td>    
+                    <td >Ejemplo de requerimiento enviado</td>    
+                    <td >Brayan Sosa</td>  
+                </tr>  
+            </table>
+            </center>
         </div>
     </body>
     <style type="text/css">
@@ -129,11 +41,10 @@
             font-size: 23px;
 
         }
-        #datoc{
+        #datou{
             margin-left: 2%;
             margin-top: 2%;
             width: 35%;
-
         }
         #centro{
             width: 98%;
@@ -175,17 +86,9 @@
             margin-top: -1%;
             color: #00a383;
         }
-        #tblu{ 
-            margin-left: 40%;
-            width:700px;
-            height: 280px;
-            margin-top: -29%;
-            position:absolute;
-            overflow-x: hidden;
-        }
         .tabla {
             margin:0px;padding:0px;
-            width:100%;
+            width: 85% !important;
             box-shadow: 10px 10px 5px #888888;
             border:1px solid #000000;
 

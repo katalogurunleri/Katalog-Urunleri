@@ -24,7 +24,8 @@ public class UsuarioServlet extends HttpServlet {
 
     public void limpiar() {
         entU.setUsuario("");
-        entU.setNombre("");
+        entU.setNombre("");        
+        entU.setDocumento("");
         entU.setEstado("");
         entU.setPerfil("");
         entU.setClave("");
@@ -43,7 +44,8 @@ public class UsuarioServlet extends HttpServlet {
         // Traer par�metros de la petici�n
         // Hecha desde FUsuario.jsp
         String user = request.getParameter("txtusuario");
-        String nombre = request.getParameter("txtnombre");
+        String nombre = request.getParameter("txtnombre");        
+        String doc = request.getParameter("txtdocu");
         String clave = request.getParameter("txtclave");
         String conclave = request.getParameter("txtconclave");
         String perfil = request.getParameter("cboperfil");
@@ -74,16 +76,6 @@ public class UsuarioServlet extends HttpServlet {
                 if (user != "") {
                     men = "Búsqueda de usuario llamado: " + user;
                     request.setAttribute("datousuario", un.getUsuario(user));
-
-                    try {
-                        request.setAttribute("listado", un.PorParametros(user));
-                    } catch (Exception e) {
-                        men = "" + e.getMessage();
-                        men += " causa : " + e.getCause();
-                    }
-
-                    //enviamos los datos del  usuario a un atributo
-                    //Llamado datousuario
                 } else {
                     men = "Ingrese un usuario para la busqueda";
                 }
@@ -146,7 +138,7 @@ public class UsuarioServlet extends HttpServlet {
                     }
                     if (mayusc != 0 && longi != 0 && num >= 3 && minusc >= 3) {
                         resp = "SIRVE";
-                        un.insertarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
+                        un.insertarUsuario(new Usuario(user, nombre, doc, clave, perfil, estado, correo, foto));
                         request.setAttribute("listado", un.listadoUsuarios());
                     }
                     if (resp.equals("NO SIRVE")) {
@@ -178,7 +170,7 @@ public class UsuarioServlet extends HttpServlet {
 
         if ("editar".equals(request.getParameter("action"))) {
             try {
-                un.ActualizarUsuario(new Usuario(user, nombre, clave, perfil, estado, correo, foto));
+                un.ActualizarUsuario(new Usuario(user, nombre, doc, clave, perfil, estado, correo, foto));
                 request.setAttribute("listado", un.listadoUsuarios());
                 /*
                  * Para Limpiar Textos
