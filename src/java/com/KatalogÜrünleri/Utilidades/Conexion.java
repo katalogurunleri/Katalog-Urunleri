@@ -2,94 +2,60 @@ package com.KatalogÜrünleri.Utilidades;
 
 //import com.Brillapismar.persistencia.SQLHelpers;
 import com.KatalogÜrünleri.Persistencia.SQLHelpers;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;//importa todos los paquetes de sql
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class Conexion {
 
-    public Conexion() {
-    }
+   public Connection con;
 
-    static {
+    public Connection conexion() {
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
-        } catch (ClassNotFoundException e1) {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/KatalogUr", "root", "");
+        } catch (ClassNotFoundException | SQLException e) {
             System.out.println("ClassNotFoundException  :"
-                    + e1.getMessage());
-        } catch (InstantiationException e2) {
-            System.out.println("InstantiationException :"
-                    + e2.getMessage());
-        } catch (IllegalAccessException e3) {
-            System.out.println("IllegalAccessException :"
-                    + e3.getMessage());
-        } catch (Exception e) {
-            System.out.println("Exception general :"
                     + e.getMessage());
         }
-    }// fin static
-    public Connection Con;
+
+        return con;
+    }
 
     public Connection getCon() {
-        ConexionDB();
-        return Con;
+        conexion();
+        return con;
     }
 
-    public void setCon(Connection Con) {
-        this.Con = Con;
+    public void setCon(Connection con) {
+        this.con = con;
     }
-
-    public void ConexionDB() {
-        String host = "Localhost";
-//String host="200.75.77.34";
-        String puerto = "1521";
-        String SID = "xe";// espacio de trabajo único
-        String user = "Katalog";
-        String password = "AdminKat123";
-        try {
-
-            DriverManager.registerDriver(
-                    new oracle.jdbc.OracleDriver());
-            setCon(DriverManager.getConnection("jdbc:oracle:thin:@" + host + ":" + puerto + ":" + SID, user, password));
-
-        } catch (SQLException e4) {
-            System.out.println("SQLException :" + e4.getMessage());
-
-        } catch (Exception e) {
-            System.out.println("Exception :" + e.getMessage());
-        }
-    }// Fin ConexionDB
-
     public void cerrarConexion() throws SQLException {
-        this.Con.close();
+        this.con.close();
     }
 
+    
     public static void main(String param[]) {
         Conexion c = new Conexion();
         Connection con;
-        /*
-         probar sentencias SQL
-         */
+        
         try {
-            ResultSet r = c.getCon().prepareStatement(SQLHelpers.getUsuarioEmail("brayan_sosa23151@elpoli.edu.co")).executeQuery();
-            System.out.println("lista de los Usuarios");
-
+            ResultSet r = c.getCon().prepareStatement(com.KatalogÜrünleri.Persistencia.SQLHelpers.getValidarIngreso("sosa", "Sosa1234")).executeQuery();
             if (r.next()) {
-                System.out.println("Usuario: " + r.getString(2));
+                System.out.println("Nombre :" + r.getString(1));
                 while (r.next()) {
-                    System.out.println("Usuario: " + r.getString(2));
+                    System.out.println("Nombre :" + r.getString(1));
                 }// fin while
             } else {
                 System.out.println("No hay datos ");
+                
             }// fin si
 
+            
         } catch (Exception e) {
             System.out.println("Error : " + e.getMessage() + " Causa " + e.getCause());
-
+            
         } finally {
             try {
                 c.cerrarConexion();
@@ -97,6 +63,6 @@ public class Conexion {
                 Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-          
-    }// fin del main
-}// fin de la clase
+        
+    }
+}

@@ -53,7 +53,11 @@
 
         <style type="text/css">
             body{
-                background-image: url(Imagenes/fondo.png);  
+                background: url(Imagenes/fondo.png) no-repeat;
+                webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
             html,body {
                 margin:0;
