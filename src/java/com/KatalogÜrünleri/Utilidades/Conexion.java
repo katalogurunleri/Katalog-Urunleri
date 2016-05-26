@@ -14,7 +14,7 @@ public class Conexion {
     public Connection conexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/KatalogUr", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://www.db4free.net/katalog", "michaelr", "michael123");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("ClassNotFoundException  :"
                     + e.getMessage());

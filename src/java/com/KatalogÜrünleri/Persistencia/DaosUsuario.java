@@ -9,6 +9,7 @@ import com.KatalogÜrünleri.Entidades.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,11 +73,12 @@ public class DaosUsuario {
     }// fin ListaUsuarios  
 
     public Usuario getUsuario(Connection con, String user) {
-        Usuario u = new Usuario();
+        Usuario u = null;
         try {
             PreparedStatement p = con.prepareStatement(SQLHelpers.getUsuario(user));
             ResultSet r = p.executeQuery();
             while (r.next()) {
+                u = new Usuario();
                 u.setUsuario(r.getString(1));
                 u.setNombre(r.getString(2));
                 u.setDocumento(r.getString(3));
@@ -87,7 +89,7 @@ public class DaosUsuario {
                 u.setFoto(r.getString(8));
 
             }// fin mientras
-        } catch (Exception e) {
+        } catch (SQLException e) {
         } finally {
             try {
                 con.close();

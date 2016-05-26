@@ -62,6 +62,10 @@ public class ProductoN {
         if ("".equals(valor) || null == valor) {
             mensajeError += "<br>Debe ingresar el  valor del producto";
         }// fin si
+        int valorA = Integer.parseInt(valor);
+        if (valorA <= 0) {
+            mensajeError += "<br>Debe ingresar un valor positivo";
+        }
         if ("".equals(foto) || null == foto) {
             mensajeError += "<br>Debe ingresar la foto del producto";
         }// fin si
@@ -119,9 +123,17 @@ public class ProductoN {
         if ("".equals(exis) || null == exis) {
             mensajeError += "<br>Debe ingresar la existencia del producto";
         }// fin si
+        int exisA = Integer.parseInt(exis);
+        if (exisA < 0) {
+            mensajeError += "<br>El valor de las existencias debe ser un número positivo";
+        }
         if ("".equals(valor) || null == valor) {
-            mensajeError += "<br>Debe ingresar el  valor del producto";
+            mensajeError += "<br>Debe ingresar el valor del producto";
         }// fin si
+        int valorA = Integer.parseInt(valor);
+        if (valorA <= 0) {
+            mensajeError += "<br>El valor del producto debe ser un número positivo";
+        }
         if ("".equals(foto) || null == foto) {
             mensajeError += "<br>Debe ingresar la foto del producto";
         }// fin si

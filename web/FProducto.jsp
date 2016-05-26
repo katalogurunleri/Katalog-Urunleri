@@ -73,7 +73,8 @@
                                     }
                                     if (fot.equals("")) {
                                 %>
-                                <td><img id="perfil" src="ImaCatalogo/cat.jpg" width="100" height="100" />
+                                <td><b id="tex">Foto*</b> <br>  
+                                    <img id="perfil" src="ImaCatalogo/cat.jpg" width="100" height="100" />
                                     <% } else {%>
                                 <td><img id="perfil" src="<%="ImaCatalogo/" + fot%>" width="100" height="100" />
                                     <%}%>

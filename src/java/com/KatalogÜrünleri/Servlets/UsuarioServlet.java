@@ -73,9 +73,15 @@ public class UsuarioServlet extends HttpServlet {
 
         if ("buscar".equals(request.getParameter("action"))) {
             try {
+                Usuario usuarioBuscado = new Usuario();
                 if (user != "") {
-                    men = "Búsqueda de usuario llamado: " + user;
-                    request.setAttribute("datousuario", un.getUsuario(user));
+                    usuarioBuscado = un.getUsuario(user);
+                    if (usuarioBuscado != null){
+                        men = "Búsqueda de usuario llamado: " + user;
+                       request.setAttribute("datousuario", un.getUsuario(user));
+                    } else{
+                        men = "Usuario no encontrado";
+                    }
                 } else {
                     men = "Ingrese un usuario para la busqueda";
                 }
@@ -126,17 +132,17 @@ public class UsuarioServlet extends HttpServlet {
                         if (ASCII >= 65 && ASCII <= 90) {
                             mayusc = mayusc + 1;
                         }
-                        if (ASCII >= 48 && ASCII <= 59) {
+                        if (ASCII >= 48 && ASCII <= 57) {
                             num = num + 1;
                         }
-                        if (ASCII >= 97 && ASCII <= 112) {
+                        if (ASCII >= 97 && ASCII <= 122) {
                             minusc = minusc + 1;
                         }
                     }
                     if (clave.length() >= 8 && clave.length() <= 16) {
                         longi = 1;
                     }
-                    if (mayusc != 0 && longi != 0 && num >= 3 && minusc >= 3) {
+                    if (mayusc > 0 && longi != 0 && num >= 3 && minusc >= 3) {
                         resp = "SIRVE";
                         un.insertarUsuario(new Usuario(user, nombre, doc, clave, perfil, estado, correo, foto));
                         request.setAttribute("listado", un.listadoUsuarios());
@@ -150,7 +156,7 @@ public class UsuarioServlet extends HttpServlet {
                         if (minusc < 3) {
                             men += "<br>•Tres letras minúsculas";
                         }
-                        if (minusc < 3) {
+                        if (num < 3) {
                             men += "<br>•3 números";
                         }
                         if (longi == 0) {
@@ -170,17 +176,20 @@ public class UsuarioServlet extends HttpServlet {
 
         if ("editar".equals(request.getParameter("action"))) {
             try {
-                un.ActualizarUsuario(new Usuario(user, nombre, doc, clave, perfil, estado, correo, foto));
-                request.setAttribute("listado", un.listadoUsuarios());
-                /*
-                 * Para Limpiar Textos
-                 */
-                limpiar();
-                request.setAttribute("datousuario", entU);
-                /*
-                 * FIN LIMPIAR TEXTOS
-                 */
-
+                if (clave.equals(conclave)) {
+                    un.ActualizarUsuario(new Usuario(user, nombre, doc, clave, perfil, estado, correo, foto));
+                    request.setAttribute("listado", un.listadoUsuarios());
+                    /*
+                    * Para Limpiar Textos
+                    */
+                   limpiar();
+                   request.setAttribute("datousuario", entU);
+                   /*
+                    * FIN LIMPIAR TEXTOS
+                    */
+                } else {
+                    men = "Las contraseñas no coinciden";
+                }
             } catch (Exception er) {
                 men = "" + er.getMessage();
             }

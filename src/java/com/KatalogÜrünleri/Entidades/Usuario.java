@@ -1,6 +1,8 @@
 package com.KatalogÜrünleri.Entidades;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     String usuario;
     String nombre;
@@ -98,5 +100,12 @@ public class Usuario {
     public void setConclave(String conclave) {
         this.conclave = conclave;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "usuario=" + usuario + ", nombre=" + nombre + ", documento=" + documento + ", clave=" + clave + ", conclave=" + conclave + ", perfil=" + perfil + ", estado=" + estado + ", correo=" + correo + ", foto=" + foto + '}';
+    }
+    
+    
     
 }//Fin Clase Usuario
